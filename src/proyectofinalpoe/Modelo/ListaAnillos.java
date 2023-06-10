@@ -9,7 +9,7 @@ package proyectofinalpoe.Modelo;
  * @author aleja
  */
 public class ListaAnillos{
-        public Anillo lista;
+    public Anillo lista;
     
     public ListaAnillos(){
         lista = null;
