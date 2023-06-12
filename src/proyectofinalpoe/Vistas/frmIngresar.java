@@ -4,6 +4,8 @@
  */
 package proyectofinalpoe.Vistas;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
 /**
  *
  * @author aleja
@@ -15,6 +17,12 @@ public class frmIngresar extends javax.swing.JFrame {
      */
     public frmIngresar() {
         initComponents();
+        //jpnMitadIzquierda.setBackground(new Color(243,223,193));
+        ImageIcon imagenIcono = new ImageIcon("src/Imagenes/Logotipo_Joyeria_AABAA.JPG");
+        Image imagen = imagenIcono.getImage();
+        Image imagenEscalada = imagen.getScaledInstance(200,200,java.awt.Image.SCALE_SMOOTH);
+        imagenIcono = new ImageIcon(imagenEscalada);
+        jImagen.setIcon(imagenIcono);
     }
 
     /**
@@ -26,18 +34,107 @@ public class frmIngresar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jpnMitadIzquierda = new javax.swing.JPanel();
+        jbnSalir = new javax.swing.JButton();
+        jtfUsuario = new javax.swing.JTextField();
+        jbnIngresar = new javax.swing.JButton();
+        jtfTitulo = new javax.swing.JLabel();
+        jlbUsuario = new javax.swing.JLabel();
+        jlbContrasena = new javax.swing.JLabel();
+        jtfContrasena = new javax.swing.JPasswordField();
+        jpMitadDerecha = new javax.swing.JPanel();
+        jImagen = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(243, 223, 193));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
+
+        jpnMitadIzquierda.setBackground(new java.awt.Color(243, 223, 193));
+        jpnMitadIzquierda.setForeground(new java.awt.Color(243, 223, 193));
+
+        jbnSalir.setBackground(new java.awt.Color(54, 143, 139));
+        jbnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        jbnSalir.setText("Salir");
+
+        jtfUsuario.setBackground(new java.awt.Color(221, 190, 168));
+        jtfUsuario.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jbnIngresar.setBackground(new java.awt.Color(54, 143, 139));
+        jbnIngresar.setForeground(new java.awt.Color(255, 255, 255));
+        jbnIngresar.setText("Ingresar");
+
+        jtfTitulo.setFont(new java.awt.Font("Malgun Gothic Semilight", 0, 18)); // NOI18N
+        jtfTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jtfTitulo.setText("Iniciar Sesión");
+
+        jlbUsuario.setText("Usuario");
+
+        jlbContrasena.setText("Contrasena");
+
+        jtfContrasena.setBackground(new java.awt.Color(221, 190, 168));
+        jtfContrasena.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        javax.swing.GroupLayout jpnMitadIzquierdaLayout = new javax.swing.GroupLayout(jpnMitadIzquierda);
+        jpnMitadIzquierda.setLayout(jpnMitadIzquierdaLayout);
+        jpnMitadIzquierdaLayout.setHorizontalGroup(
+            jpnMitadIzquierdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnMitadIzquierdaLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jpnMitadIzquierdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jpnMitadIzquierdaLayout.createSequentialGroup()
+                        .addComponent(jbnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(jbnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlbUsuario)
+                    .addComponent(jtfUsuario)
+                    .addComponent(jlbContrasena)
+                    .addComponent(jtfTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtfContrasena))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jpnMitadIzquierdaLayout.setVerticalGroup(
+            jpnMitadIzquierdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnMitadIzquierdaLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jtfTitulo)
+                .addGap(29, 29, 29)
+                .addComponent(jlbUsuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jlbContrasena)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addGroup(jpnMitadIzquierdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbnSalir)
+                    .addComponent(jbnIngresar))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jpnMitadIzquierda);
+
+        jpMitadDerecha.setBackground(new java.awt.Color(36, 106, 115));
+
+        javax.swing.GroupLayout jpMitadDerechaLayout = new javax.swing.GroupLayout(jpMitadDerecha);
+        jpMitadDerecha.setLayout(jpMitadDerechaLayout);
+        jpMitadDerechaLayout.setHorizontalGroup(
+            jpMitadDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMitadDerechaLayout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addComponent(jImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58))
+        );
+        jpMitadDerechaLayout.setVerticalGroup(
+            jpMitadDerechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMitadDerechaLayout.createSequentialGroup()
+                .addContainerGap(81, Short.MAX_VALUE)
+                .addComponent(jImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(97, 97, 97))
+        );
+
+        getContentPane().add(jpMitadDerecha);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -72,11 +169,21 @@ public class frmIngresar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmIngresar().setVisible(true);
+                //new frmIngresar().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jImagen;
+    public javax.swing.JButton jbnIngresar;
+    public javax.swing.JButton jbnSalir;
+    private javax.swing.JLabel jlbContrasena;
+    private javax.swing.JLabel jlbUsuario;
+    private javax.swing.JPanel jpMitadDerecha;
+    private javax.swing.JPanel jpnMitadIzquierda;
+    public javax.swing.JPasswordField jtfContrasena;
+    private javax.swing.JLabel jtfTitulo;
+    public javax.swing.JTextField jtfUsuario;
     // End of variables declaration//GEN-END:variables
 }
