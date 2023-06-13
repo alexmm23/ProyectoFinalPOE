@@ -41,7 +41,7 @@ public class CtrlIngreso implements ActionListener {
             Usuario usuarioEncontrado = new Usuario();
             boolean usuarioExiste = false;
             
-            if(vista.jtfUsuario.getText().isEmpty() || vista.jtfUsuario.getText().isEmpty()){//Validar que no haya campos vacios
+            if(vista.jtfUsuario.getText().isEmpty() || vista.jtfContrasena.getText().isEmpty()){//Validar que no haya campos vacios
                 JOptionPane.showMessageDialog(vista, "Debes completar todos los campos", "Advertencia",JOptionPane.WARNING_MESSAGE);
             
             }else{
@@ -57,7 +57,8 @@ public class CtrlIngreso implements ActionListener {
                 if(usuarioExiste == true){
                     //Pasa el usuario encontrado al frame principal
                     frmMenuPrincipal menu = new frmMenuPrincipal();
-                    CtrlMenu ctrlMenu = new CtrlMenu(menu,usuarioEncontrado);
+                    CtrlMenu ctrlMenu = new CtrlMenu(menu,usuarioEncontrado,usuarios);
+                    ctrlMenu.iniciar();
                     menu.setVisible(true);
                     vista.dispose();
                 }else{

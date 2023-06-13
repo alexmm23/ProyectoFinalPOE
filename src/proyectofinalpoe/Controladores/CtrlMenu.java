@@ -6,6 +6,9 @@ package proyectofinalpoe.Controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import proyectofinalpoe.Modelo.ListaAnillos;
+import proyectofinalpoe.Modelo.ListaAretes;
+import proyectofinalpoe.Modelo.ListaCollares;
 import proyectofinalpoe.Modelo.Usuario;
 import proyectofinalpoe.Vistas.frmIngresar;
 import proyectofinalpoe.Vistas.frmMenuPrincipal;
@@ -20,10 +23,15 @@ public class CtrlMenu implements ActionListener{
     //private frmIngreso vistaIngreso;
     private frmMenuPrincipal vista;
     private Usuario usuario;
+    private Usuario[] usuarios;
+    private ListaAnillos anillos;
+    private ListaCollares collares;
+    private ListaAretes aretes;
     
-     public CtrlMenu(frmMenuPrincipal vista, Usuario usuario){
+     public CtrlMenu(frmMenuPrincipal vista, Usuario usuario, Usuario[] usuarios){
         this.vista = vista;
         this.usuario = usuario;
+        this.usuarios = usuarios;
         this.vista.jmiNuevoUsuario.addActionListener(this);
         this.vista.jmiNuevaEntrada.addActionListener(this);
         this.vista.jmiNuevaSalida.addActionListener(this);
@@ -41,17 +49,21 @@ public class CtrlMenu implements ActionListener{
 
         
     }
+    public void actualizarArreglo(Usuario[] usuarios){
+        this.usuarios = usuarios;
+    }
       public void iniciar(){
         vista.setTitle("Menu Principal");
+        vista.jlbTitulo.setText("Hola " + usuario.getNombre());
+        vista.setVisible(true);
         vista.setLocationRelativeTo(null);
     }
       @Override
       public void actionPerformed(ActionEvent e){
           if(e.getSource() == vista.jmiNuevoUsuario){
               jifNuevoUsuario vistaNuevoUsuario = new jifNuevoUsuario();
-              CtrlNuevoUsuario ctrlnUsuario = new CtrlNuevoUsuario(vista);
-              vista.jdpEscritorio.add(vistaNuevoUsuario);
-              vistaNuevoUsuario.show();
+              CtrlNuevoUsuario ctrlnUsuario = new CtrlNuevoUsuario(usuarios,vistaNuevoUsuario,this);
+              ctrlnUsuario.iniciar();
               
               
           }else if(e.getSource() == vista.jmiNuevaEntrada){
@@ -85,5 +97,8 @@ public class CtrlMenu implements ActionListener{
           }
       }
     
+      
+
+      
     
 }

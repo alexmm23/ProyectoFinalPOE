@@ -21,7 +21,7 @@ public class ProyectoFinalPOE {
  
     public static void main(String[] args) {
         frmIngresar f = new frmIngresar();
-        Usuario usuarios[] = new Usuario[5];
+        Usuario usuarios[] = new Usuario[10];
         usuarios[0] = new Usuario(0,"admin", "admin");
         CtrlIngreso ctrlIngreso = new CtrlIngreso(f, usuarios);
         ctrlIngreso.iniciar();
