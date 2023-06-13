@@ -45,8 +45,6 @@ public class CtrlMenu implements ActionListener{
         this.vista.jmiMostrarEntradas.addActionListener(this);
         this.vista.jmiMostrarSalidas.addActionListener(this);
         this.vista.jmnSalir.addActionListener(this);
-      
-
         
     }
     public void actualizarArreglo(Usuario[] usuarios){
@@ -68,7 +66,8 @@ public class CtrlMenu implements ActionListener{
               
           }else if(e.getSource() == vista.jmiNuevaEntrada){
               jifNuevaEntrada vistaNuevaEntrada = new jifNuevaEntrada();
-              CtrlNuevaEntrada ctrlnEntrada = new CtrlNuevaEntrada();
+              CtrlNuevaEntrada ctrlnEntrada = new CtrlNuevaEntrada(this, vistaNuevaEntrada);
+              ctrlnEntrada.iniciar();
               
           }else if(e.getSource() == vista.jmiNuevaSalida){
               
@@ -90,12 +89,38 @@ public class CtrlMenu implements ActionListener{
               
           }else if(e.getSource() == vista.jmiMostrarSalidas){
               
-          }else{//Salir
+          }else if(e.getSource() == vista.jmnSalir){//Salir
               frmIngresar ingreso = new frmIngresar();
+              CtrlIngreso n = new CtrlIngreso(ingreso,usuarios);
+              n.iniciar();
               ingreso.setVisible(true);
               vista.dispose();
           }
       }
+
+    public ListaAnillos getAnillos() {
+        return anillos;
+    }
+
+    public void setAnillos(ListaAnillos anillos) {
+        this.anillos = anillos;
+    }
+
+    public ListaCollares getCollares() {
+        return collares;
+    }
+
+    public void setCollares(ListaCollares collares) {
+        this.collares = collares;
+    }
+
+    public ListaAretes getAretes() {
+        return aretes;
+    }
+
+    public void setAretes(ListaAretes aretes) {
+        this.aretes = aretes;
+    }
     
       
 
