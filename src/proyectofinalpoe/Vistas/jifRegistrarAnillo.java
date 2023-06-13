@@ -26,15 +26,150 @@ public class jifRegistrarAnillo extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jlbTitulo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jtfMaterial = new javax.swing.JTextField();
+        jtfTamano = new javax.swing.JTextField();
+        jtfPiedra = new javax.swing.JTextField();
+        jtfEstilo = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtaDescripcion = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jbnRegresar = new javax.swing.JButton();
+        jbnGuardar = new javax.swing.JButton();
+        rbnSi = new javax.swing.JRadioButton();
+        rbnNo = new javax.swing.JRadioButton();
+
+        setBackground(new java.awt.Color(22, 15, 41));
+
+        jlbTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jlbTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jlbTitulo.setText("Registrar Anillo");
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Ajustable");
+
+        jtfMaterial.setBackground(new java.awt.Color(243, 223, 193));
+        jtfMaterial.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jtfTamano.setBackground(new java.awt.Color(243, 223, 193));
+        jtfTamano.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jtfPiedra.setBackground(new java.awt.Color(243, 223, 193));
+        jtfPiedra.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jtfEstilo.setBackground(new java.awt.Color(243, 223, 193));
+        jtfEstilo.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jtaDescripcion.setBackground(new java.awt.Color(243, 223, 193));
+        jtaDescripcion.setColumns(20);
+        jtaDescripcion.setRows(5);
+        jtaDescripcion.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jScrollPane1.setViewportView(jtaDescripcion);
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Material");
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Tamaño");
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Piedra");
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Estilo");
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Descripción");
+
+        jbnRegresar.setBackground(new java.awt.Color(243, 223, 193));
+        jbnRegresar.setText("Regresar");
+
+        jbnGuardar.setBackground(new java.awt.Color(243, 223, 193));
+        jbnGuardar.setText("Guardar");
+
+        rbnSi.setBackground(new java.awt.Color(243, 223, 193));
+        buttonGroup1.add(rbnSi);
+        rbnSi.setText("Si");
+
+        rbnNo.setBackground(new java.awt.Color(243, 223, 193));
+        buttonGroup1.add(rbnNo);
+        rbnNo.setText("No");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jbnRegresar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbnGuardar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jtfEstilo)
+                            .addComponent(jtfPiedra)
+                            .addComponent(jtfTamano)
+                            .addComponent(jlbTitulo)
+                            .addComponent(jtfMaterial)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rbnSi, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(rbnNo, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)))
+                        .addGap(21, 21, 21)))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jlbTitulo)
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(rbnSi)
+                    .addComponent(rbnNo))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfTamano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfPiedra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfEstilo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbnRegresar)
+                    .addComponent(jbnGuardar))
+                .addGap(33, 33, 33))
         );
 
         pack();
@@ -42,5 +177,23 @@ public class jifRegistrarAnillo extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JButton jbnGuardar;
+    public javax.swing.JButton jbnRegresar;
+    private javax.swing.JLabel jlbTitulo;
+    public javax.swing.JTextArea jtaDescripcion;
+    public javax.swing.JTextField jtfEstilo;
+    public javax.swing.JTextField jtfMaterial;
+    public javax.swing.JTextField jtfPiedra;
+    public javax.swing.JTextField jtfTamano;
+    public javax.swing.JRadioButton rbnNo;
+    public javax.swing.JRadioButton rbnSi;
     // End of variables declaration//GEN-END:variables
 }

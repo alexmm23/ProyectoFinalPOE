@@ -7,30 +7,37 @@ package proyectofinalpoe.Controladores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import proyectofinalpoe.Modelo.Entrada;
-import proyectofinalpoe.Modelo.ListaAretes;
-import proyectofinalpoe.Vistas.jifRegistrarArete;
+import proyectofinalpoe.Modelo.ListaCollares;
+import proyectofinalpoe.Vistas.jifRegistrarCollar;
 
 /**
  *
  * @author aleja
  */
-public class CtrlArete implements ActionListener{
+public class CtrlCollar implements ActionListener{
 
-    public CtrlArete(jifRegistrarArete registrarArete, ListaAretes aretes, Entrada entradaAux) {
-    }
+    jifRegistrarCollar vista;
+    ListaCollares collares;
     
-    
-    public void CtrlArete(){
+    public CtrlCollar(jifRegistrarCollar registrarCollar, ListaCollares collares, Entrada entradaAux) {
+        this.vista = registrarCollar;
+        this.collares = collares;
         
     }
     
+    
+    public void CtrlCollar(){
+        
+    }
+
     @Override
     public void actionPerformed(ActionEvent e){
         
+    
+    }
+    void iniciar() {
     }
     
-    public void iniciar(){
-        
-    }
+    
     
 }

@@ -28,13 +28,12 @@ public class ListaEntradas {
     }
     public boolean buscar(Entrada n){
         Entrada aux = lista;
-        Entrada aretes = n;
+        Entrada entrada = n;
         
         boolean encontrado = false;
-        
-        
+       
         while(aux != null){
-            if(aretes.getId() == aux.getId()){
+            if(entrada.getProveedor().equals(aux.getProveedor())){
                 encontrado = true;
                 break;
             }
@@ -44,6 +43,24 @@ public class ListaEntradas {
         return encontrado;
     }
     
-    
-    
+//    public boolean eliminar(Entrada n){
+//        Entrada aux = lista;
+//        Entrada entrada = n;
+//               
+//        while(aux != null){
+//            if(entrada.getProveedor().equals(aux.getProveedor())){
+//                
+//                while(aux.getSiguiente != null){
+//                    aux = aux.getSiguiente();
+//                }
+//                break;
+//            }
+//            aux = aux.getSiguiente();
+//        }
+//        
+//        return encontrado;
+//    }
+//    
+//    
+//    
 }

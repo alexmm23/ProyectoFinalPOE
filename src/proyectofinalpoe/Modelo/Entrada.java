@@ -28,6 +28,14 @@ public class Entrada {
     public Entrada(){
         
     }
+
+    public Entrada getSiguiente() {
+        return siguiente;
+    }
+
+    public void setSiguiente(Entrada siguiente) {
+        this.siguiente = siguiente;
+    }
     
     public String getFecha() {
         return fecha;

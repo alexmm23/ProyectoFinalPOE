@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import proyectofinalpoe.Modelo.ListaAnillos;
 import proyectofinalpoe.Modelo.ListaAretes;
 import proyectofinalpoe.Modelo.ListaCollares;
+import proyectofinalpoe.Modelo.ListaEntradas;
 import proyectofinalpoe.Modelo.Usuario;
 import proyectofinalpoe.Vistas.frmIngresar;
 import proyectofinalpoe.Vistas.frmMenuPrincipal;
@@ -27,6 +28,7 @@ public class CtrlMenu implements ActionListener{
     private ListaAnillos anillos;
     private ListaCollares collares;
     private ListaAretes aretes;
+    private ListaEntradas entradas;
     
      public CtrlMenu(frmMenuPrincipal vista, Usuario usuario, Usuario[] usuarios){
         this.vista = vista;
@@ -120,6 +122,14 @@ public class CtrlMenu implements ActionListener{
 
     public void setAretes(ListaAretes aretes) {
         this.aretes = aretes;
+    }
+
+    public ListaEntradas getEntradas() {
+        return entradas;
+    }
+
+    public void setEntradas(ListaEntradas entradas) {
+        this.entradas = entradas;
     }
     
       
