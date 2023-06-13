@@ -4,10 +4,15 @@
  */
 package proyectofinalpoe.Controladores;
 
+import proyectofinalpoe.Vistas.frmMenuPrincipal;
+
 /**
  *
  * @author aleja
  */
-public class ControladorMenu {
+public class CtrlNuevoUsuario {
+
+    public CtrlNuevoUsuario(frmMenuPrincipal vista) {
+    }
     
 }

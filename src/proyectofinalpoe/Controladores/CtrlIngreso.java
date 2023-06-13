@@ -15,11 +15,11 @@ import proyectofinalpoe.Vistas.frmMenuPrincipal;
  *
  * @author aleja
  */
-public class ControladorIngreso implements ActionListener {
+public class CtrlIngreso implements ActionListener {
     private frmIngresar vista;
     private Usuario[] usuarios;
 
-    public ControladorIngreso(frmIngresar vista, Usuario[] usuarios){
+    public CtrlIngreso(frmIngresar vista, Usuario[] usuarios){
         this.vista = vista;
         this.usuarios = usuarios;
         this.vista.jbnIngresar.addActionListener(this);
@@ -56,7 +56,8 @@ public class ControladorIngreso implements ActionListener {
 
                 if(usuarioExiste == true){
                     //Pasa el usuario encontrado al frame principal
-                    frmMenuPrincipal menu = new frmMenuPrincipal(usuarioEncontrado);
+                    frmMenuPrincipal menu = new frmMenuPrincipal();
+                    CtrlMenu ctrlMenu = new CtrlMenu(menu,usuarioEncontrado);
                     menu.setVisible(true);
                     vista.dispose();
                 }else{
