@@ -14,6 +14,7 @@ public class Entrada {
     private int numProductos;
     private double costoCompra;
     private String tipoProducto;//Anillo/collar/aretes
+    private Entrada siguiente;
 
     public Entrada(String fecha, String proveedor, int numProductos, double costoCompra, String tipoProducto) {
         this.fecha = fecha;
@@ -21,6 +22,7 @@ public class Entrada {
         this.numProductos = numProductos;
         this.costoCompra = costoCompra;
         this.tipoProducto = tipoProducto;
+        this.siguiente = null;
     }
     
     public Entrada(){

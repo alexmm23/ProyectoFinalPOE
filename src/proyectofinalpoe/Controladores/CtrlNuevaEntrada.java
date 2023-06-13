@@ -13,6 +13,7 @@ import proyectofinalpoe.Modelo.ListaCollares;
 import static proyectofinalpoe.Vistas.frmMenuPrincipal.jdpEscritorio;
 import proyectofinalpoe.Vistas.jifNuevaEntrada;
 import proyectofinalpoe.Vistas.jifRegistrarAnillo;
+import proyectofinalpoe.Vistas.jifRegistrarArete;
 
 /**
  *
@@ -50,11 +51,9 @@ public class CtrlNuevaEntrada implements ActionListener{
         }else if(e.getSource() == vista.jbnSiguiente){
             boolean estanVacios = vista.jtfCantProductos.getText().isEmpty() || vista.jtfCantProductos.getText().isEmpty()
                     || vista.jtfProveedor.getText().isEmpty() 
-                    || vista.jcbMeses.getSelectedIndex() == 0
-;
+                    || vista.jcbMeses.getSelectedIndex() == 0;
             if(estanVacios){//Validar que no haya campos vacios
                 JOptionPane.showMessageDialog(vista, "Debes completar todos los campos", "Advertencia",JOptionPane.WARNING_MESSAGE);
-            
             }else
             switch (vista.jcbTipoProducto.getSelectedIndex()) {
                 case 1 -> {
@@ -64,6 +63,10 @@ public class CtrlNuevaEntrada implements ActionListener{
                     vista.dispose();
                 }
                 case 2 -> {
+                    jifRegistrarArete registrarArete = new jifRegistrarArete();
+                    CtrlArete ctrlArete = new CtrlArete(registrarArete, aretes);
+                    ctrlArete.iniciar();
+                    vista.dispose();
                 }
                 case 3 -> {
                 }
