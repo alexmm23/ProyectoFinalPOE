@@ -28,7 +28,7 @@ public class jifMostrarSalidas extends javax.swing.JInternalFrame {
 
         jbnAtras = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTablaMostrar = new javax.swing.JTable();
+        jtListado = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(22, 15, 41));
@@ -41,7 +41,7 @@ public class jifMostrarSalidas extends javax.swing.JInternalFrame {
         jbnAtras.setBackground(new java.awt.Color(243, 223, 193));
         jbnAtras.setText("Atras");
 
-        jScrollPane1.setViewportView(jTablaMostrar);
+        jScrollPane1.setViewportView(jtListado);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -84,7 +84,7 @@ public class jifMostrarSalidas extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTablaMostrar;
     public javax.swing.JButton jbnAtras;
+    public javax.swing.JTable jtListado;
     // End of variables declaration//GEN-END:variables
 }

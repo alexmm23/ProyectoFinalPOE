@@ -4,12 +4,15 @@
  */
 package proyectofinalpoe.Modelo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aleja
  */
 public class ListaSalidas {
      public Salida lista;
+     private int cantNodos;
     
     public void ListaSalidas(){
         lista = null;
@@ -19,12 +22,14 @@ public class ListaSalidas {
                
         if(lista == null){
             lista = nuevo;
+            cantNodos++;
         }else{
             Salida aux = lista;
             while(aux.getSiguiente() != null){
                 aux = aux.getSiguiente();
             }
             aux.setSiguiente(e);
+            cantNodos++;
         }
     }
     
@@ -47,6 +52,28 @@ public class ListaSalidas {
             return null;
         }
     }
+    public Salida[] imprimir(){
+        Salida aux = lista;
+        Salida[] arreglo = new Salida[cantNodos];
+        int j=0;
+        int i=1;
+        if(lista==null){
+            JOptionPane.showMessageDialog(null,"Pila Vacia");
+        }else{
+            while(aux != null){
+                arreglo[j] = aux;
+                aux = aux.getSiguiente();
+                i++;
+                j++;
+            }
+        }
+        return arreglo;
+    }
+    
+    public boolean estaVacia(){
+        Salida aux = lista;
+        return aux == null;
+    }
      
     public boolean eliminarLista(String fecha) {
         Salida anterior = lista;
@@ -57,6 +84,7 @@ public class ListaSalidas {
         while (actual != null) {
             if (actual.getFecha().equals(fecha)) {
                 anterior.setSiguiente(siguiente);
+                cantNodos--;
                 eliminado = true;
                 break; // Salir del bucle una vez que se elimina el elemento
             } else {
@@ -69,6 +97,12 @@ public class ListaSalidas {
         }
         return eliminado;  
     }
+
+    public int getCantNodos() {
+        return cantNodos;
+    }
+
+
     
     
 }

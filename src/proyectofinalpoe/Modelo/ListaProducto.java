@@ -1,9 +1,12 @@
 package proyectofinalpoe.Modelo;
 
+import javax.swing.JOptionPane;
+
 public class ListaProducto {
     public Producto lista;
     public Producto ultimo;
     public int id;
+    private int cantNodos;
     
     public void ListaProducto(){
         lista = null;
@@ -24,6 +27,7 @@ public class ListaProducto {
             lista = nuevo;
             lista.setId(id);
             id++;
+            cantNodos++;
         }else{
             Producto aux = lista;
             while(aux.getSiguiente() != null){
@@ -32,6 +36,7 @@ public class ListaProducto {
             nuevo.setId(id);
             aux.setSiguiente(nuevo);
             id++;
+            cantNodos++;
         }
     }
     
@@ -54,6 +59,28 @@ public class ListaProducto {
             return null;
         }
     }
+    public Producto[] imprimir(){
+        Producto aux = lista;
+        Producto[] arreglo = new Producto[cantNodos];
+        int j=0;
+        int i=1;
+        if(lista==null){
+            JOptionPane.showMessageDialog(null,"Pila Vacia");
+        }else{
+            while(aux != null){
+                arreglo[j] = aux;
+                aux = aux.getSiguiente();
+                i++;
+                j++;
+            }
+        }
+        return arreglo;
+    }
+    
+    public boolean estaVacia(){
+        Producto aux = lista;
+        return aux == null;
+    }
      
     public boolean eliminarLista(int id) {
         Producto anterior = lista;
@@ -65,6 +92,7 @@ public class ListaProducto {
             if (actual.getId() == id) {
                 anterior.siguiente = siguiente;
                 eliminado = true;
+                cantNodos--;
                 break; // Salir del bucle una vez que se elimina el elemento
             } else {
                 anterior = actual;
@@ -75,5 +103,8 @@ public class ListaProducto {
             }
         }
         return eliminado;  
-    }    
+    }  
+        public int getCantNodos() {
+        return cantNodos;
+    }
 }

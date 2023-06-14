@@ -14,6 +14,9 @@ import proyectofinalpoe.Modelo.Producto;
 import proyectofinalpoe.Modelo.Usuario;
 import proyectofinalpoe.Vistas.frmMenuPrincipal;
 import proyectofinalpoe.Vistas.jifBuscarProducto;
+import proyectofinalpoe.Vistas.jifMostrarEntradas;
+import proyectofinalpoe.Vistas.jifMostrarProductos;
+import proyectofinalpoe.Vistas.jifMostrarSalidas;
 import proyectofinalpoe.Vistas.jifNuevoUsuario;
 import proyectofinalpoe.Vistas.jifNuevaEntrada;
 import proyectofinalpoe.Vistas.jifNuevaSalida;
@@ -97,10 +100,19 @@ public class CtrlMenu implements ActionListener{
           }else if(e.getSource() == vista.jmiBuscarSalida){
               
           }else if(e.getSource() == vista.jmiMostrarProductos){
+              jifMostrarProductos vistaMostrarProducto = new jifMostrarProductos();
+              CtrlMostrarProductos ctrlMostrarProductos = new CtrlMostrarProductos(listaProductos, vistaMostrarProducto);
+              ctrlMostrarProductos.iniciar();
               
           }else if(e.getSource() == vista.jmiMostrarEntradas){
+              jifMostrarEntradas vistaMostrarEntradas = new jifMostrarEntradas();
+              CtrlMostrarEntradas ctrlMostrarEntradas = new CtrlMostrarEntradas(entradas, vistaMostrarEntradas);
+              ctrlMostrarEntradas.iniciar();
               
           }else if(e.getSource() == vista.jmiMostrarSalidas){
+              jifMostrarSalidas vistaMostrarSalidas = new jifMostrarSalidas();
+              CtrlMostrarSalida ctrlMostrarSalidas = new CtrlMostrarSalida(salidas, vistaMostrarSalidas);
+              ctrlMostrarSalidas.iniciar();
               
           }else if(e.getSource() == vista.jbnSalir){//Salir
               this.controlador.iniciar();

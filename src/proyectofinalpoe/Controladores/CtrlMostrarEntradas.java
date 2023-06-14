@@ -6,6 +6,9 @@ package proyectofinalpoe.Controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import proyectofinalpoe.Modelo.ListaEntradas;
+import proyectofinalpoe.Modelo.ListaProducto;
+import proyectofinalpoe.Vistas.jifMostrarEntradas;
 
 /**
  *
@@ -14,7 +17,7 @@ import java.awt.event.ActionListener;
 public class CtrlMostrarEntradas implements ActionListener{
     
     
-    public CtrlMostrarEntradas() {
+    public CtrlMostrarEntradas(ListaEntradas listaProductos, jifMostrarEntradas vistaMostrarEntradas) {
         
         
     }
