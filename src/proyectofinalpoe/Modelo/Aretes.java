@@ -14,7 +14,7 @@ public class Aretes extends Producto{
     private String cierre;
     private String color;
     private boolean piedras;
-    private Aretes siguiente;
+   
 
     public Aretes(String material, String forma, String cierre, String color, boolean piedras, int id, String nombre, double precio, int stock, String descripcion) {
         super(id, nombre, precio, descripcion);
@@ -76,12 +76,5 @@ public class Aretes extends Producto{
         this.piedras = piedras;
     }
 
-    public Aretes getSiguiente() {
-        return siguiente;
-    }
-
-    public void setSiguiente(Aretes siguiente) {
-        this.siguiente = siguiente;
-    }
     
 }

@@ -14,7 +14,7 @@ public class Anillo extends Producto {
     private String piedra;
     private boolean ajustable;
     private String estilo;
-    private Anillo siguiente;
+
 
     public Anillo(String material, int tamano, String piedra, boolean ajustable, String estilo, int id, String nombre, double precio, int stock, String descripcion) {
         super(id, nombre, precio, descripcion);
@@ -73,13 +73,5 @@ public class Anillo extends Producto {
     public void setEstilo(String estilo) {
         this.estilo = estilo;
     }
-
-    public Anillo getSiguiente() {
-        return siguiente;
-    }
-
-    public void setSiguiente(Anillo siguiente) {
-        this.siguiente = siguiente;
-    }
-    
+ 
 }

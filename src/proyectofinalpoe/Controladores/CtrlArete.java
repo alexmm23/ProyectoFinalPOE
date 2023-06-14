@@ -7,7 +7,6 @@ package proyectofinalpoe.Controladores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import proyectofinalpoe.Modelo.Entrada;
-import proyectofinalpoe.Modelo.ListaAretes;
 import proyectofinalpoe.Modelo.ListaProducto;
 import proyectofinalpoe.Vistas.jifRegistrarArete;
 
