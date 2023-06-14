@@ -6,13 +6,16 @@ package proyectofinalpoe.Controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import proyectofinalpoe.Modelo.Anillo;
 import proyectofinalpoe.Modelo.ListaAnillos;
 import proyectofinalpoe.Modelo.ListaAretes;
 import proyectofinalpoe.Modelo.ListaCollares;
 import proyectofinalpoe.Modelo.ListaEntradas;
+import proyectofinalpoe.Modelo.ListaProducto;
 import proyectofinalpoe.Modelo.Usuario;
 import proyectofinalpoe.Vistas.frmIngresar;
 import proyectofinalpoe.Vistas.frmMenuPrincipal;
+import proyectofinalpoe.Vistas.jifBuscarProducto;
 import proyectofinalpoe.Vistas.jifNuevoUsuario;
 import proyectofinalpoe.Vistas.jifNuevaEntrada;
 
@@ -25,6 +28,7 @@ public class CtrlMenu implements ActionListener{
     private frmMenuPrincipal vista;
     private Usuario usuario;
     private Usuario[] usuarios;
+    private ListaProducto listaproductos;
     private ListaAnillos anillos;
     private ListaCollares collares;
     private ListaAretes aretes;
@@ -34,6 +38,7 @@ public class CtrlMenu implements ActionListener{
         this.vista = vista;
         this.usuario = usuario;
         this.usuarios = usuarios;
+        this.listaproductos = new ListaProducto();
         this.vista.jmiNuevoUsuario.addActionListener(this);
         this.vista.jmiNuevaEntrada.addActionListener(this);
         this.vista.jmiNuevaSalida.addActionListener(this);
@@ -47,6 +52,11 @@ public class CtrlMenu implements ActionListener{
         this.vista.jmiMostrarEntradas.addActionListener(this);
         this.vista.jmiMostrarSalidas.addActionListener(this);
         this.vista.jmnSalir.addActionListener(this);
+        
+        Anillo anillo = new Anillo();
+        anillo.setId(123);
+        anillo.setPiedra("Lapizlazuli");
+        listaproductos.agregar(anillo);
         
     }
     public void actualizarArreglo(Usuario[] usuarios){
@@ -80,6 +90,9 @@ public class CtrlMenu implements ActionListener{
           }else if(e.getSource() == vista.jmiEliminarSalida){
               
           }else if(e.getSource() == vista.jmiBuscarProducto){
+              jifBuscarProducto vistaBuscarProducto = new jifBuscarProducto();
+              CtrlBuscarProducto ctrlnBuscarProducto = new CtrlBuscarProducto(listaproductos, vistaBuscarProducto );
+              ctrlnBuscarProducto.iniciar();
               
           }else if(e.getSource() == vista.jmiBuscarEntrada){
               

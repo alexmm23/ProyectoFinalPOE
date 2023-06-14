@@ -42,6 +42,10 @@ public class CtrlNuevaEntrada implements ActionListener{
         this.vista.jbnSiguiente.addActionListener(this);
 
     }
+    void iniciar() {
+        jdpEscritorio.add(vista);
+        vista.show();
+    }
     
     @Override
     public void actionPerformed(ActionEvent e){
@@ -73,39 +77,28 @@ public class CtrlNuevaEntrada implements ActionListener{
                 entradaAux.setTipoProducto(String.valueOf(vista.jcbTipoProducto.getSelectedItem()));
                 
                 //entradas.agregar(entradaAux);
-            switch (vista.jcbTipoProducto.getSelectedIndex()) {
-                case 1 -> {
-                    jifRegistrarAnillo registrarAnillo = new jifRegistrarAnillo();
-                    CtrlAnillo ctrlAnillo = new CtrlAnillo(registrarAnillo, anillos, entradaAux);
-                    ctrlAnillo.iniciar();
-                    vista.dispose();
-                }
-                case 2 -> {
-                    jifRegistrarArete registrarArete = new jifRegistrarArete();
-                    CtrlArete ctrlArete = new CtrlArete(registrarArete, aretes,entradaAux);
-                    ctrlArete.iniciar();
-                    vista.dispose();
-                }
-                case 3 -> {
-                    jifRegistrarCollar registrarCollar = new jifRegistrarCollar();
-                    CtrlCollar ctrlCollar = new CtrlCollar(registrarCollar, collares,entradaAux);
-                    ctrlCollar.iniciar();
-                    vista.dispose();
-                }
-                default -> {
-                }
-            
-            }
-           
-            }
-        }
-            
-  
-    }
+                switch (vista.jcbTipoProducto.getSelectedIndex()) {
+                    case 1 : {
+                        jifRegistrarAnillo registrarAnillo = new jifRegistrarAnillo();
+                        CtrlAnillo ctrlAnillo = new CtrlAnillo(registrarAnillo, anillos, entradaAux);
+                        ctrlAnillo.iniciar();
+                        vista.dispose();
+                    }
+                    case 2 : {
+                        jifRegistrarArete registrarArete = new jifRegistrarArete();
+                        CtrlArete ctrlArete = new CtrlArete(registrarArete, aretes,entradaAux);
+                        ctrlArete.iniciar();
+                        vista.dispose();
+                    }
+                    case 3 : {
+                        jifRegistrarCollar registrarCollar = new jifRegistrarCollar();
+                        CtrlCollar ctrlCollar = new CtrlCollar(registrarCollar, collares,entradaAux);
+                        ctrlCollar.iniciar();
+                        vista.dispose();
+                    }
 
-    void iniciar() {
-        jdpEscritorio.add(vista);
-        vista.show();
+                }
+            }   
+        }
     }
-    
 }

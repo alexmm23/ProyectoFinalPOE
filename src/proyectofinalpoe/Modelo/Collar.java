@@ -17,7 +17,7 @@ public class Collar extends Producto{
     private Collar siguiente;
 
     public Collar(double longitud, String material, String tipoGema, String cadena, boolean estilo, int id, String nombre, double precio, int stock, String descripcion) {
-        super(id, nombre, precio, stock, descripcion);
+        super(id, nombre, precio, descripcion);
         this.longitud = longitud;
         this.material = material;
         this.tipoGema = tipoGema;
