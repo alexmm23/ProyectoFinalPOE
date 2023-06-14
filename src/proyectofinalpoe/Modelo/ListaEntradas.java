@@ -1,8 +1,11 @@
 
 package proyectofinalpoe.Modelo;
  
+import javax.swing.JOptionPane;
+
 public class ListaEntradas {
    public Entrada lista;
+   private int cantNodos;
     
     public void ListaEntradas(){
         lista = null;
@@ -12,12 +15,15 @@ public class ListaEntradas {
                
         if(lista == null){
             lista = nuevo;
+            cantNodos++;
         }else{
             Entrada aux = lista;
             while(aux.getSiguiente() != null){
                 aux = aux.getSiguiente();
+                
             }
             aux.setSiguiente(e);
+            cantNodos++;
         }
     }
     
@@ -39,6 +45,27 @@ public class ListaEntradas {
         }else{
             return null;
         }
+    }public Entrada[] imprimir(){
+        Entrada aux = lista;
+        Entrada[] arreglo = new Entrada[cantNodos];
+        int j=0;
+        int i=1;
+        if(lista==null){
+            JOptionPane.showMessageDialog(null,"Pila Vacia");
+        }else{
+            while(aux != null){
+                arreglo[j] = aux;
+                aux = aux.getSiguiente();
+                i++;
+                j++;
+            }
+        }
+        return arreglo;
+    }
+    
+    public boolean estaVacia(){
+        Entrada aux = lista;
+        return aux == null;
     }
      
     public boolean eliminarLista(String fecha) {
@@ -50,6 +77,7 @@ public class ListaEntradas {
         while (actual != null) {
             if (actual.getFecha()== fecha) {
                 anterior.setSiguiente(siguiente);
+                cantNodos--;
                 eliminado = true;
                 break; // Salir del bucle una vez que se elimina el elemento
             } else {
@@ -62,4 +90,9 @@ public class ListaEntradas {
         }
         return eliminado;  
     }
+
+    public int getCantNodos() {
+        return cantNodos;
+    }
+    
 }

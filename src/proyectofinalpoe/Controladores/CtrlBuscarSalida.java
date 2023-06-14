@@ -49,8 +49,8 @@ public class CtrlBuscarSalida implements ActionListener{
                     JOptionPane.showMessageDialog(menu, "Fecha: " + salida.getFecha() + "\n" + 
                                                         "Cliente: " + salida.getCliente()+ "\n" +
                                                         "Numero de Productos: " + salida.getNumProductos()+ "\n" +
-                                                        "Tipo de Productos: $" + salida.getTipoProducto()+ "\n" +
-                                                        "Costo de Venta: " + salida.getCostoVenta()+ "\n");
+                                                        "Tipo de Productos: " + salida.getTipoProducto()+ "\n" +
+                                                        "Costo de Venta: $" + salida.getCostoVenta()+ "\n");
                 }
             }
         }

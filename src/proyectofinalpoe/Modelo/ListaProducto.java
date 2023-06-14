@@ -12,15 +12,7 @@ public class ListaProducto {
         lista = null;
     }
     public void agregar(Producto p){
-        /*
-        Producto nuevoNodo = p;
-        if (lista == null) {
-            lista = nuevoNodo;
-            ultimo = nuevoNodo;
-        } else {
-            ultimo.siguiente = nuevoNodo;
-            ultimo = nuevoNodo;
-        }*/
+
         Producto nuevo = p;
                
         if(lista == null){

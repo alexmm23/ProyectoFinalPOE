@@ -70,19 +70,19 @@ public class CtrlNuevaEntrada implements ActionListener{
                 listaEntradas.agregar(entradaAux);
                 
                 switch (vista.jcbTipoProducto.getSelectedIndex()) {
-                    case 1 : {
+                    case 1 -> {
                         jifRegistrarAnillo vistaRegistrarAnillo = new jifRegistrarAnillo();
                         CtrlAnillo ctrlAnillo = new CtrlAnillo(menu,vistaRegistrarAnillo,listaProductos, entradaAux);
                         ctrlAnillo.iniciar();
                         vista.dispose();
                     }
-                    case 2 : {
+                    case 2 -> {
                         jifRegistrarArete vistaRegistrarArete = new jifRegistrarArete();
                         CtrlArete ctrlArete = new CtrlArete(menu, vistaRegistrarArete, listaProductos,entradaAux);
                         ctrlArete.iniciar();
                         vista.dispose();
                     }
-                    case 3 : {
+                    case 3 -> {
                         jifRegistrarCollar vistaRegistrarCollar = new jifRegistrarCollar();
                         CtrlCollar ctrlCollar = new CtrlCollar(menu,vistaRegistrarCollar, listaProductos,entradaAux);
                         ctrlCollar.iniciar();

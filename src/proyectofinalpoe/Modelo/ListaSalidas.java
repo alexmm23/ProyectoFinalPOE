@@ -57,8 +57,8 @@ public class ListaSalidas {
         Salida[] arreglo = new Salida[cantNodos];
         int j=0;
         int i=1;
-        if(lista==null){
-            JOptionPane.showMessageDialog(null,"Pila Vacia");
+        if(lista==null || cantNodos <=0){
+            JOptionPane.showMessageDialog(null,"Lista Vacia");
         }else{
             while(aux != null){
                 arreglo[j] = aux;

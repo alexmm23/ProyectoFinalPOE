@@ -33,19 +33,26 @@ public class jifBuscarSalida extends javax.swing.JInternalFrame {
         jbnBuscarSalida = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(22, 15, 41));
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Buscar Salida");
 
         jLabel1.setBackground(new java.awt.Color(221, 190, 168));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Fecha Salida:");
+
+        jtfFechaSalida.setBackground(new java.awt.Color(221, 190, 168));
+        jtfFechaSalida.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jbnCancelar.setBackground(new java.awt.Color(36, 106, 115));
         jbnCancelar.setText("Cancelar");
+        jbnCancelar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jbnBuscarSalida.setBackground(new java.awt.Color(36, 106, 115));
         jbnBuscarSalida.setText("Buscar");
+        jbnBuscarSalida.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jbnBuscarSalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbnBuscarSalidaActionPerformed(evt);
@@ -80,7 +87,7 @@ public class jifBuscarSalida extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbnCancelar)
                     .addComponent(jbnBuscarSalida))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
