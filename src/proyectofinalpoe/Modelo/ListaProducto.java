@@ -3,6 +3,7 @@ package proyectofinalpoe.Modelo;
 public class ListaProducto {
     public Producto lista;
     public Producto ultimo;
+    public int id;
     
     public void ListaProducto(){
         lista = null;
@@ -21,12 +22,16 @@ public class ListaProducto {
                
         if(lista == null){
             lista = nuevo;
+            lista.setId(id);
+            id++;
         }else{
             Producto aux = lista;
             while(aux.getSiguiente() != null){
                 aux = aux.getSiguiente();
             }
+            nuevo.setId(id);
             aux.setSiguiente(nuevo);
+            id++;
         }
     }
     

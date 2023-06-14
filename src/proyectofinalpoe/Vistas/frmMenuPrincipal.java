@@ -61,7 +61,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jmiMostrarSalidas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setIconImage(getIconImage());
 
         jdpEscritorio.setBackground(new java.awt.Color(22, 15, 41));
 
@@ -92,7 +91,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
             .addGroup(jdpEscritorioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlbTitulo)
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addContainerGap(460, Short.MAX_VALUE))
             .addGroup(jdpEscritorioLayout.createSequentialGroup()
                 .addComponent(jbnSalir)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -107,11 +106,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jmiNuevoUsuario.setBackground(new java.awt.Color(243, 223, 193));
         jmiNuevoUsuario.setText("Usuario");
-        jmiNuevoUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiNuevoUsuarioActionPerformed(evt);
-            }
-        });
         jmnNuevo.add(jmiNuevoUsuario);
 
         jmiNuevaEntrada.setBackground(new java.awt.Color(243, 223, 193));

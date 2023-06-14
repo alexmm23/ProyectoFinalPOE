@@ -10,8 +10,6 @@ import javax.swing.JOptionPane;
 import proyectofinalpoe.Modelo.Anillo;
 import proyectofinalpoe.Modelo.Entrada;
 import proyectofinalpoe.Modelo.ListaProducto;
-import proyectofinalpoe.Modelo.Producto;
-import proyectofinalpoe.Vistas.frmMenuPrincipal;
 import static proyectofinalpoe.Vistas.frmMenuPrincipal.jdpEscritorio;
 import proyectofinalpoe.Vistas.jifRegistrarAnillo;
 
@@ -25,7 +23,7 @@ public class CtrlAnillo implements ActionListener {
     private jifRegistrarAnillo vista;
     private ListaProducto listaProductos;
     private Entrada entrada;
-    private int id = 1;
+    //private int id = 1;
     
     public CtrlAnillo(CtrlMenu menu,jifRegistrarAnillo registrarAnillo, ListaProducto listaProductos, Entrada entradaAux) {
         this.menu = menu;
@@ -56,7 +54,7 @@ public class CtrlAnillo implements ActionListener {
                 int i = 0;
                 while(i < entrada.getNumProductos()){
                     Anillo aux = new Anillo();
-                    aux.setId(i);
+                    //aux.setId(id);
                     aux.setNombre(entrada.getTipoProducto());
                     aux.setAjustable(esAjustable);
                     aux.setDescripcion(vista.jtaDescripcion.getText());
@@ -65,7 +63,6 @@ public class CtrlAnillo implements ActionListener {
                     aux.setPiedra(vista.jtfPiedra.getText());
                     aux.setPrecio(calcularPrecio);
                     aux.setTamano(Integer.parseInt(vista.jtfTamano.getText()));
-                    id++;
                     listaProductos.agregar(aux);
                     i++;
                     

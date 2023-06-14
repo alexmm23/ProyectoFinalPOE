@@ -36,7 +36,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jbnRegresar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="jbnSiguiente" min="-2" max="-2" attributes="0"/>
+                              <Component id="jbnGuardar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -55,10 +55,10 @@
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Component id="jcbAnio" min="-2" pref="50" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jtfProveedor" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jtfCliente" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jcbTipoProducto" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jtfCantProductos" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jtfCostoCompra" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jtfCostoVenta" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -89,7 +89,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtfProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -104,12 +104,12 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtfCostoCompra" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtfCostoVenta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jbnRegresar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbnSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbnGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="79" max="32767" attributes="0"/>
           </Group>
@@ -125,7 +125,7 @@
         <Property name="text" type="java.lang.String" value="Fecha"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtfCostoCompra">
+    <Component class="javax.swing.JTextField" name="jtfCostoVenta">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="c1" green="df" red="f3" type="rgb"/>
@@ -166,15 +166,15 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="jbnSiguiente">
+    <Component class="javax.swing.JButton" name="jbnGuardar">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="c1" green="df" red="f3" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Siguiente"/>
+        <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbnSiguienteActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbnGuardarActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -301,7 +301,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtfProveedor">
+    <Component class="javax.swing.JTextField" name="jtfCliente">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="c1" green="df" red="f3" type="rgb"/>

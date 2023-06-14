@@ -9,12 +9,14 @@ import java.awt.event.ActionListener;
 import proyectofinalpoe.Modelo.Anillo;
 import proyectofinalpoe.Modelo.ListaEntradas;
 import proyectofinalpoe.Modelo.ListaProducto;
+import proyectofinalpoe.Modelo.ListaSalidas;
 import proyectofinalpoe.Modelo.Producto;
 import proyectofinalpoe.Modelo.Usuario;
 import proyectofinalpoe.Vistas.frmMenuPrincipal;
 import proyectofinalpoe.Vistas.jifBuscarProducto;
 import proyectofinalpoe.Vistas.jifNuevoUsuario;
 import proyectofinalpoe.Vistas.jifNuevaEntrada;
+import proyectofinalpoe.Vistas.jifNuevaSalida;
 
 /**
  *
@@ -27,6 +29,7 @@ public class CtrlMenu implements ActionListener{
     private Usuario[] usuarios;
     private ListaProducto listaProductos;
     private ListaEntradas entradas;
+    private ListaSalidas salidas;
     
      public CtrlMenu(frmMenuPrincipal vista, Usuario usuario, Usuario[] usuarios,CtrlIngreso controlador){
         this.vista = vista;
@@ -34,6 +37,7 @@ public class CtrlMenu implements ActionListener{
         this.usuario = usuario;
         this.usuarios = usuarios;
         this.entradas = new ListaEntradas();
+        this.salidas = new ListaSalidas();
         this.listaProductos = new ListaProducto();
         this.vista.jmiNuevoUsuario.addActionListener(this);
         this.vista.jmiNuevaEntrada.addActionListener(this);
@@ -48,19 +52,7 @@ public class CtrlMenu implements ActionListener{
         this.vista.jmiMostrarEntradas.addActionListener(this);
         this.vista.jmiMostrarSalidas.addActionListener(this);
         this.vista.jbnSalir.addActionListener(this);
-        //PRUEBAS
-        Anillo anillo = new Anillo();
-        Anillo anillo2 = new Anillo();
-        anillo2.setId(10);
-        anillo.setId(123);
-        anillo.setPiedra("Lapizlazuli");
-        listaProductos.agregar(anillo);
-        listaProductos.agregar(anillo2);
-        Producto p = listaProductos.lista;
-        while(p != null){
-            System.out.println(p.getId());
-            p = p.getSiguiente();
-        }
+       
     }
     public void actualizarArreglo(Usuario[] usuarios){
         this.usuarios = usuarios;
@@ -85,6 +77,9 @@ public class CtrlMenu implements ActionListener{
               ctrlnEntrada.iniciar();
               
           }else if(e.getSource() == vista.jmiNuevaSalida){
+              jifNuevaSalida vistaNuevaSalida = new jifNuevaSalida();
+              CtrlNuevaSalida ctrlnSalida = new CtrlNuevaSalida(this,vistaNuevaSalida, salidas);
+              ctrlnSalida.iniciar();
               
           }else if(e.getSource() == vista.jmiEliminarUsuario){
               

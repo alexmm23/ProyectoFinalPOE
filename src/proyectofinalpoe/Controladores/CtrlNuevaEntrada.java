@@ -78,13 +78,13 @@ public class CtrlNuevaEntrada implements ActionListener{
                     }
                     case 2 : {
                         jifRegistrarArete vistaRegistrarArete = new jifRegistrarArete();
-                        CtrlArete ctrlArete = new CtrlArete(vistaRegistrarArete, listaProductos,entradaAux);
+                        CtrlArete ctrlArete = new CtrlArete(menu, vistaRegistrarArete, listaProductos,entradaAux);
                         ctrlArete.iniciar();
                         vista.dispose();
                     }
                     case 3 : {
                         jifRegistrarCollar vistaRegistrarCollar = new jifRegistrarCollar();
-                        CtrlCollar ctrlCollar = new CtrlCollar(vistaRegistrarCollar, listaProductos,entradaAux);
+                        CtrlCollar ctrlCollar = new CtrlCollar(menu,vistaRegistrarCollar, listaProductos,entradaAux);
                         ctrlCollar.iniciar();
                         vista.dispose();
                     }
