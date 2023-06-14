@@ -14,16 +14,10 @@ import proyectofinalpoe.Vistas.jifRegistrarCollar;
  *
  * @author aleja
  */
-public class CtrlCollar implements ActionListener{
+public class CtrlBuscarEntrada implements ActionListener {
 
-    jifRegistrarCollar vista;
-    ListaProducto listaProductos;
-    Entrada entrada;
-    
-    public CtrlCollar(jifRegistrarCollar vistaRegistrarCollar, ListaProducto listaProductos, Entrada entradaAux) {
-        this.vista = vistaRegistrarCollar;
-        this.entrada = entradaAux;
-        this.listaProductos = listaProductos;
+    public CtrlBuscarEntrada() {
+        
         
     }
     
@@ -39,7 +33,4 @@ public class CtrlCollar implements ActionListener{
     }
     void iniciar() {
     }
-    
-    
-    
 }

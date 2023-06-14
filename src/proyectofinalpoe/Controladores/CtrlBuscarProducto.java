@@ -44,11 +44,20 @@ public class CtrlBuscarProducto implements ActionListener{
             }
             else{
                 //Castear Objeto Producto y Anillo
-               aux = lista.buscar(id);
-               if(aux instanceof Anillo ){
+                aux = lista.buscar(id);
+                if(aux == null){
+                    JOptionPane.showMessageDialog(menu,"No se encontro el producto");
+                }else if(aux instanceof Anillo ){
                    Anillo anillo = (Anillo) aux;
+                   //Prueba
+                                /*Producto a = listaProductos.lista;
+                   while(a.getSiguiente() != null){
+                        System.out.println(a.getId());
+                    a = a.getSiguiente();
+                   }*/
+                   //
                    JOptionPane.showMessageDialog(menu, "Anillo:" + anillo.getPiedra());
-               }
+                }
                    
                    /*Anillo anillo = new Anillo();
                    Collar collar = new Collar();
