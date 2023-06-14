@@ -6,33 +6,34 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import proyectofinalpoe.Modelo.Entrada;
 import proyectofinalpoe.Modelo.ListaEntradas;
+import proyectofinalpoe.Modelo.ListaProducto;
 import proyectofinalpoe.Vistas.frmMenuPrincipal;
 import static proyectofinalpoe.Vistas.frmMenuPrincipal.jdpEscritorio;
-import proyectofinalpoe.Vistas.jifBuscarEntrada;
+import proyectofinalpoe.Vistas.jifEliminarEntrada;
+import proyectofinalpoe.Vistas.jifEliminarProducto;
 
 
-public class CtrlBuscarEntrada implements ActionListener {
-
-    private jifBuscarEntrada vista;
+public class CtrlEliminarEntrada implements ActionListener{
+    
+    private jifEliminarEntrada vista;
     private frmMenuPrincipal menu;
     private ListaEntradas lista;
     
-    public CtrlBuscarEntrada(ListaEntradas listaEntradas, jifBuscarEntrada vistaBuscarEntrada ) {
-        this.vista = vistaBuscarEntrada;
+    public CtrlEliminarEntrada(ListaEntradas listaEntradas, jifEliminarEntrada vistaEliminarEntrada ){
+        this.vista = vistaEliminarEntrada;
         this.lista = listaEntradas;
-        this.vista.jbnBuscarEntrada.addActionListener(this);
+        this.vista.jbnEliminarEntrada.addActionListener(this);
         this.vista.jbnCancelar.addActionListener(this);
+       
     }
-    
-    
     public void iniciar(){
         jdpEscritorio.add(vista);
         vista.show();
     }
-
+    
     @Override
-    public void actionPerformed(ActionEvent e){
-        if(e.getSource() == vista.jbnBuscarEntrada) {
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == vista.jbnEliminarEntrada) {
             String fecha = vista.jtfFechaEntrada.getText();
             Entrada aux = new Entrada();
             
@@ -41,23 +42,16 @@ public class CtrlBuscarEntrada implements ActionListener {
             }
             else{
                 //Castear Objeto Producto y Anillo
-                aux = lista.buscar(fecha);
-                if(aux == null){
+                boolean eliminado = lista.eliminarLista(fecha);
+                if(eliminado == false){
                     JOptionPane.showMessageDialog(menu,"No se encontro la entrada");
-                }else {
-                    Entrada entrada = aux;
-                    JOptionPane.showMessageDialog(menu, "Fecha: " + entrada.getFecha() + "\n" + 
-                                                        "Proveedor: " + entrada.getProveedor() + "\n" +
-                                                        "Numero de Proveedor: " + entrada.getNumProductos() + "\n" +
-                                                        "Costo de compra: $" + entrada.getCostoCompra() + "\n" +
-                                                        "Tipo de producto: " + entrada.getTipoProducto() + "\n");
+                }else if(eliminado == true){
+                    JOptionPane.showMessageDialog(menu,"Se elimino correctamente");
                 }
             }
         }
         if(e.getSource() == vista.jbnCancelar) {
             vista.dispose();
         }
-    
     }
-    
 }

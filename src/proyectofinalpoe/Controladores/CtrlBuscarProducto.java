@@ -18,8 +18,6 @@ public class CtrlBuscarProducto implements ActionListener{
 
     private jifBuscarProducto vista;
     private frmMenuPrincipal menu;
-    private Producto productos;
-    private Anillo anillo;
     private ListaProducto lista;
     
     public CtrlBuscarProducto(ListaProducto listaProducto, jifBuscarProducto vistaBuscarProducto ){
@@ -39,7 +37,6 @@ public class CtrlBuscarProducto implements ActionListener{
         if(e.getSource() == vista.jbnBuscarProducto) {
             int id = Integer.parseInt(vista.jtfIdProducto.getText());
             Producto aux = new Producto();
-            boolean productoExiste = false;
             
             if(vista.jtfIdProducto.getText().isEmpty()){
                 JOptionPane.showMessageDialog(vista,"Ingresa el id del producto");
@@ -51,24 +48,40 @@ public class CtrlBuscarProducto implements ActionListener{
                     JOptionPane.showMessageDialog(menu,"No se encontro el producto");
                 }else if(aux instanceof Anillo ){
                    Anillo anillo = (Anillo) aux;
-                   //Prueba
-                                /*Producto a = listaProductos.lista;
-                   while(a.getSiguiente() != null){
-                        System.out.println(a.getId());
-                    a = a.getSiguiente();
-                   }*/
-                   //
-                   JOptionPane.showMessageDialog(menu, "Anillo:" + anillo.getPiedra());
+                   JOptionPane.showMessageDialog(menu, "ID: " + anillo.getId()+ "\n" +
+                                                       "Nombre: " + anillo.getNombre() + "\n" +
+                                                       "Precio: " +anillo.getPrecio() + "\n" + 
+                                                       "Descripcion: " + anillo.getDescripcion() + "\n" + 
+                                                       "Material: " + anillo.getMaterial() + "\n" + 
+                                                       "Tamaño: " + anillo.getTamano() + "\n" + 
+                                                       "Piedra: " + anillo.getPiedra() + "\n" + 
+                                                       "Ajustable: " + anillo.isAjustable() + "\n" + 
+                                                       "Estilo: " + anillo.getEstilo() + "n");
                }
                if(aux instanceof Collar) {
                    Collar collar = (Collar) aux;
-                   JOptionPane.showMessageDialog(menu, "Collar: " + collar.getMaterial());
+                   JOptionPane.showMessageDialog(menu, "ID: " + collar.getId()+ "\n" +
+                                                       "Nombre: " + collar.getNombre() + "\n" +
+                                                       "Precio: " +collar.getPrecio() + "\n" + 
+                                                       "Descripcion: " + collar.getDescripcion() + "\n" + 
+                                                       "Longitud: " + collar.getLongitud()+ "\n" + 
+                                                       "Material: " + collar.getMaterial()+ "\n" + 
+                                                       "Tipo de Gema: " + collar.getTipoGema()+ "\n" + 
+                                                       "Cadena: " + collar.getCadena()+ "\n" + 
+                                                       "Estilo: " + collar.isEstilo()+ "n");
                }
                if(aux instanceof Aretes) {
                    Aretes aretes = (Aretes) aux;
-                   JOptionPane.showMessageDialog(menu, "Aretes: " + aretes.getCierre());
+                   JOptionPane.showMessageDialog(menu, "ID: " + aretes.getId()+ "\n" +
+                                                       "Nombre: " + aretes.getNombre() + "\n" +
+                                                       "Precio: " +aretes.getPrecio() + "\n" + 
+                                                       "Descripcion: " + aretes.getDescripcion() + "\n" + 
+                                                       "Material: " + aretes.getMaterial() + "\n" + 
+                                                       "Forma: " + aretes.getForma()+ "\n" + 
+                                                       "Cierre: " + aretes.getCierre()+ "\n" + 
+                                                       "Color: " + aretes.getColor()+ "\n" + 
+                                                       "Tipo Gema: " + aretes.isPiedras() + "\n");
                }
-       
             }
         }
         if(e.getSource() == vista.jbnCancelar) {

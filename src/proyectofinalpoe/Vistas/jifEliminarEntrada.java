@@ -33,6 +33,10 @@ public class jifEliminarEntrada extends javax.swing.JInternalFrame {
         jbnEliminarEntrada = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(22, 15, 41));
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setTitle("Eliminar Entrada");
 
         jLabel1.setBackground(new java.awt.Color(221, 190, 168));
         jLabel1.setText("Fecha Entrada");

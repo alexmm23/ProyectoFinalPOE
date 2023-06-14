@@ -9,18 +9,18 @@ import proyectofinalpoe.Modelo.Salida;
 import proyectofinalpoe.Vistas.frmMenuPrincipal;
 import static proyectofinalpoe.Vistas.frmMenuPrincipal.jdpEscritorio;
 import proyectofinalpoe.Vistas.jifBuscarSalida;
+import proyectofinalpoe.Vistas.jifEliminarSalida;
 
-
-public class CtrlBuscarSalida implements ActionListener{
+public class CtrlEliminarSalida implements ActionListener{
     
-    private jifBuscarSalida vista;
+    private jifEliminarSalida vista;
     private frmMenuPrincipal menu;
     private ListaSalidas lista;
     
-    public  CtrlBuscarSalida(ListaSalidas listaSalidas, jifBuscarSalida vistaBuscarSalida) {
-        this.vista = vistaBuscarSalida;
+    public  CtrlEliminarSalida(ListaSalidas listaSalidas, jifEliminarSalida vistaEliminarSalida) {
+        this.vista = vistaEliminarSalida;
         this.lista = listaSalidas;
-        this.vista.jbnBuscarSalida.addActionListener(this);
+        this.vista.jbnEliminarSalida.addActionListener(this);
         this.vista.jbnCancelar.addActionListener(this);
    
     }
@@ -32,7 +32,7 @@ public class CtrlBuscarSalida implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e){
-        if(e.getSource() == vista.jbnBuscarSalida) {
+        if(e.getSource() == vista.jbnEliminarSalida) {
             String fecha = vista.jtfFechaSalida.getText();
             Salida aux = new Salida();
             
@@ -41,16 +41,11 @@ public class CtrlBuscarSalida implements ActionListener{
             }
             else{
                 //Castear Objeto Producto y Anillo
-                aux = lista.buscar(fecha);
-                if(aux == null){
+                boolean eliminado = lista.eliminarLista(fecha);
+                if(eliminado == false){
                     JOptionPane.showMessageDialog(menu,"No se encontro la entrada");
-                }else {
-                    Salida salida = aux;
-                    JOptionPane.showMessageDialog(menu, "Fecha: " + salida.getFecha() + "\n" + 
-                                                        "Cliente: " + salida.getCliente()+ "\n" +
-                                                        "Numero de Productos: " + salida.getNumProductos()+ "\n" +
-                                                        "Tipo de Productos: $" + salida.getTipoProducto()+ "\n" +
-                                                        "Costo de Venta: " + salida.getCostoVenta()+ "\n");
+                }else if ( eliminado == true) {
+                   JOptionPane.showMessageDialog(menu, "Se elimino correctamente");
                 }
             }
         }
@@ -60,5 +55,4 @@ public class CtrlBuscarSalida implements ActionListener{
      
     
     }
-    
 }
