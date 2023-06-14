@@ -1,34 +1,33 @@
-
 package proyectofinalpoe.Modelo;
- 
-public class ListaEntradas {
-   public Entrada lista;
+
+public class ListaProducto {
+    public Producto lista;
     
-    public void ListaEntradas(){
+    public void ListaProducto(){
         lista = null;
     }
-    public void agregar(Entrada e){
-        Entrada nuevo = e;
+    public void agregar(Producto p){
+        Producto nuevo = p;
                
         if(lista == null){
             lista = nuevo;
         }else{
-            Entrada aux = lista;
+            Producto aux = lista;
             while(aux.getSiguiente() != null){
                 aux = aux.getSiguiente();
             }
-            aux.setSiguiente(e);
+            aux.setSiguiente(p);
         }
     }
     
-    public Entrada buscar(String fecha){
-        Entrada aux = lista;
-        String Fecha = fecha ;
+    public Producto buscar(int id){
+        Producto aux = lista;
+        int Id = id;
         
         boolean encontrado = false;
               
         while(aux != null){
-            if(Fecha.equals(aux.getFecha())){
+            if(Id == aux.getId()){
                 encontrado = true;
                 break;
             }
@@ -41,25 +40,25 @@ public class ListaEntradas {
         }
     }
      
-    public boolean eliminarLista(String fecha) {
-        Entrada anterior = lista;
-        Entrada actual = lista;
-        Entrada siguiente = lista.getSiguiente();
+    public boolean eliminarLista(int id) {
+        Producto anterior = lista;
+        Producto actual = lista;
+        Producto siguiente = lista.siguiente;
         boolean eliminado = false;
 
         while (actual != null) {
-            if (actual.getFecha()== fecha) {
-                anterior.setSiguiente(siguiente);
+            if (actual.getId() == id) {
+                anterior.siguiente = siguiente;
                 eliminado = true;
                 break; // Salir del bucle una vez que se elimina el elemento
             } else {
                 anterior = actual;
                 actual = siguiente;
                 if (siguiente != null) {
-                    siguiente = siguiente.getSiguiente();
+                    siguiente = siguiente.siguiente;
                 }
             }
         }
         return eliminado;  
-    }
+    }    
 }

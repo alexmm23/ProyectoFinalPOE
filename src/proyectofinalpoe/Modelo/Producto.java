@@ -12,29 +12,24 @@ public class Producto{
     protected int id;
     protected String nombre;
     protected double precio;
-    protected int stock;
     protected String descripcion;
-    //protected Producto siguiente;
-
-    public Producto(int id, String nombre, double precio, int stock, String descripcion) {
+    protected Producto siguiente;
+    
+    public Producto(int id, String nombre, double precio, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
-        this.stock = stock;
         this.descripcion = descripcion;
-        //this.siguiente = null;
+        this.siguiente = null;
     }
 
     public Producto() {
         this.id = 0;
         this.nombre = "deg";
         this.precio = 1;
-        this.stock = 0;
         this.descripcion = "des";
-        //this.siguiente = null;
+        this.siguiente = null;
     }
-
-    
     
     public int getId() {
         return id;
@@ -60,14 +55,6 @@ public class Producto{
         this.precio = precio;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -76,6 +63,12 @@ public class Producto{
         this.descripcion = descripcion;
     }
 
+    public Producto getSiguiente() {
+        return siguiente;
+    }
 
-    
+    public void setSiguiente(Producto siguiente) {
+        this.siguiente = siguiente;
+    }
+ 
 }

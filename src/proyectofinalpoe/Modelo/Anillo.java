@@ -17,7 +17,7 @@ public class Anillo extends Producto {
     private Anillo siguiente;
 
     public Anillo(String material, int tamano, String piedra, boolean ajustable, String estilo, int id, String nombre, double precio, int stock, String descripcion) {
-        super(id, nombre, precio, stock, descripcion);
+        super(id, nombre, precio, descripcion);
         this.material = material;
         this.tamano = tamano;
         this.piedra = piedra;

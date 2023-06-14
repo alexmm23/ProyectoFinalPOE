@@ -57,7 +57,6 @@ public class CtrlAnillo implements ActionListener {
                 aux.setEstilo(vista.jtfEstilo.getText());
                 aux.setPiedra(vista.jtfPiedra.getText());
                 aux.setPrecio((entrada.getCostoCompra()/entrada.getNumProductos())*1.3);
-                aux.setStock(entrada.getNumProductos());
                 aux.setTamano(Integer.parseInt(vista.jtfTamano.getText()));
                 id++;
                 anillos.agregar(aux);
