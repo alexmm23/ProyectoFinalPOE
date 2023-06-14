@@ -32,6 +32,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jdpEscritorio = new javax.swing.JDesktopPane();
         jlbTitulo = new javax.swing.JLabel();
+        jbnSalir = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmnNuevo = new javax.swing.JMenu();
         jmiNuevoUsuario = new javax.swing.JMenuItem();
@@ -49,7 +50,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jmiMostrarProductos = new javax.swing.JMenuItem();
         jmiMostrarEntradas = new javax.swing.JMenuItem();
         jmiMostrarSalidas = new javax.swing.JMenuItem();
-        jmnSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,7 +60,12 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jlbTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlbTitulo.setText("Bienvenido");
 
+        jbnSalir.setBackground(new java.awt.Color(243, 223, 193));
+        jbnSalir.setText("Cerrar Sesión");
+        jbnSalir.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
         jdpEscritorio.setLayer(jlbTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jdpEscritorio.setLayer(jbnSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jdpEscritorioLayout = new javax.swing.GroupLayout(jdpEscritorio);
         jdpEscritorio.setLayout(jdpEscritorioLayout);
@@ -69,7 +74,8 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
             .addGroup(jdpEscritorioLayout.createSequentialGroup()
                 .addGap(231, 231, 231)
                 .addComponent(jlbTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addComponent(jbnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jdpEscritorioLayout.setVerticalGroup(
             jdpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,6 +83,9 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jlbTitulo)
                 .addContainerGap(359, Short.MAX_VALUE))
+            .addGroup(jdpEscritorioLayout.createSequentialGroup()
+                .addComponent(jbnSalir)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(221, 190, 168));
@@ -161,10 +170,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jmnMostrar);
 
-        jmnSalir.setBackground(new java.awt.Color(221, 190, 168));
-        jmnSalir.setText("Salir");
-        jMenuBar1.add(jmnSalir);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,6 +231,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JButton jbnSalir;
     public static javax.swing.JDesktopPane jdpEscritorio;
     public javax.swing.JLabel jlbTitulo;
     public javax.swing.JMenuItem jmiBuscarEntrada;
@@ -244,6 +250,5 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenu jmnEliminar;
     public javax.swing.JMenu jmnMostrar;
     public javax.swing.JMenu jmnNuevo;
-    public javax.swing.JMenu jmnSalir;
     // End of variables declaration//GEN-END:variables
 }

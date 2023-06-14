@@ -25,7 +25,6 @@ public class ProyectoFinalPOE {
         usuarios[0] = new Usuario(0,"admin", "admin");
         CtrlIngreso ctrlIngreso = new CtrlIngreso(f, usuarios);
         ctrlIngreso.iniciar();
-        f.setVisible(true);
     }
     
 }

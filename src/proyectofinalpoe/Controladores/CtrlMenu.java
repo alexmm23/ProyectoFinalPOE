@@ -23,6 +23,8 @@ import proyectofinalpoe.Vistas.jifNuevaEntrada;
 public class CtrlMenu implements ActionListener{
     //private frmIngreso vistaIngreso;
     private frmMenuPrincipal vista;
+    //private frmIngresar ingreso;
+    private CtrlIngreso controlador;
     private Usuario usuario;
     private Usuario[] usuarios;
     private ListaAnillos anillos;
@@ -30,10 +32,16 @@ public class CtrlMenu implements ActionListener{
     private ListaAretes aretes;
     private ListaEntradas entradas;
     
-     public CtrlMenu(frmMenuPrincipal vista, Usuario usuario, Usuario[] usuarios){
+     public CtrlMenu(frmMenuPrincipal vista, Usuario usuario, Usuario[] usuarios,CtrlIngreso controlador){
         this.vista = vista;
+        this.controlador = controlador;
         this.usuario = usuario;
         this.usuarios = usuarios;
+        this.entradas = new ListaEntradas();
+        this.aretes = new ListaAretes();
+        this.anillos = new ListaAnillos();
+        this.collares = new ListaCollares();
+        //this.ingreso = ingreso;
         this.vista.jmiNuevoUsuario.addActionListener(this);
         this.vista.jmiNuevaEntrada.addActionListener(this);
         this.vista.jmiNuevaSalida.addActionListener(this);
@@ -46,7 +54,7 @@ public class CtrlMenu implements ActionListener{
         this.vista.jmiMostrarProductos.addActionListener(this);
         this.vista.jmiMostrarEntradas.addActionListener(this);
         this.vista.jmiMostrarSalidas.addActionListener(this);
-        this.vista.jmnSalir.addActionListener(this);
+        this.vista.jbnSalir.addActionListener(this);
         
     }
     public void actualizarArreglo(Usuario[] usuarios){
@@ -91,11 +99,8 @@ public class CtrlMenu implements ActionListener{
               
           }else if(e.getSource() == vista.jmiMostrarSalidas){
               
-          }else if(e.getSource() == vista.jmnSalir){//Salir
-              frmIngresar ingreso = new frmIngresar();
-              CtrlIngreso n = new CtrlIngreso(ingreso,usuarios);
-              n.iniciar();
-              ingreso.setVisible(true);
+          }else if(e.getSource() == vista.jbnSalir){//Salir
+              this.controlador.iniciar();
               vista.dispose();
           }
       }

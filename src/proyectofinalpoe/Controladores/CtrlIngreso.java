@@ -29,6 +29,7 @@ public class CtrlIngreso implements ActionListener {
     public void iniciar(){
         vista.setTitle("Iniciar sesión");
         vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
     }
     
     @Override
@@ -57,7 +58,7 @@ public class CtrlIngreso implements ActionListener {
                 if(usuarioExiste == true){
                     //Pasa el usuario encontrado al frame principal
                     frmMenuPrincipal menu = new frmMenuPrincipal();
-                    CtrlMenu ctrlMenu = new CtrlMenu(menu,usuarioEncontrado,usuarios);
+                    CtrlMenu ctrlMenu = new CtrlMenu(menu,usuarioEncontrado,usuarios,this);
                     ctrlMenu.iniciar();
                     menu.setVisible(true);
                     vista.dispose();

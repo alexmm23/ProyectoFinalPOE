@@ -66,13 +66,13 @@ public class CtrlNuevaEntrada implements ActionListener{
                 JOptionPane.showMessageDialog(vista, "Debes completar todos los campos", "Advertencia",JOptionPane.WARNING_MESSAGE);
             }else{
                 fecha = String.valueOf(vista.jcbDias.getSelectedItem())+ "/" + String.valueOf(vista.jcbMeses.getSelectedItem()) + "/" + String.valueOf(vista.jcbAnio.getSelectedItem());
-                entradaAux.setCostoCompra(Integer.parseInt(vista.jtfCostoCompra.getText()));
+                entradaAux.setCostoCompra(Double.parseDouble(vista.jtfCostoCompra.getText()));
                 entradaAux.setFecha(fecha);
                 entradaAux.setNumProductos(Integer.parseInt(vista.jtfCantProductos.getText()));
                 entradaAux.setProveedor(vista.jtfProveedor.getText());
                 entradaAux.setTipoProducto(String.valueOf(vista.jcbTipoProducto.getSelectedItem()));
                 
-                //entradas.agregar(entradaAux);
+                entradas.agregar(entradaAux);
             switch (vista.jcbTipoProducto.getSelectedIndex()) {
                 case 1 -> {
                     jifRegistrarAnillo registrarAnillo = new jifRegistrarAnillo();
