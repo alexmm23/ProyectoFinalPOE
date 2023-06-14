@@ -13,7 +13,12 @@ import proyectofinalpoe.Modelo.ListaSalidas;
 import proyectofinalpoe.Modelo.Producto;
 import proyectofinalpoe.Modelo.Usuario;
 import proyectofinalpoe.Vistas.frmMenuPrincipal;
+import proyectofinalpoe.Vistas.jifBuscarEntrada;
 import proyectofinalpoe.Vistas.jifBuscarProducto;
+import proyectofinalpoe.Vistas.jifBuscarSalida;
+import proyectofinalpoe.Vistas.jifEliminarEntrada;
+import proyectofinalpoe.Vistas.jifEliminarProducto;
+import proyectofinalpoe.Vistas.jifEliminarSalida;
 import proyectofinalpoe.Vistas.jifNuevoUsuario;
 import proyectofinalpoe.Vistas.jifNuevaEntrada;
 import proyectofinalpoe.Vistas.jifNuevaSalida;
@@ -44,7 +49,7 @@ public class CtrlMenu implements ActionListener{
         this.vista.jmiNuevaSalida.addActionListener(this);
         this.vista.jmiEliminarEntrada.addActionListener(this);
         this.vista.jmiEliminarSalida.addActionListener(this);
-        this.vista.jmiEliminarUsuario.addActionListener(this);
+        this.vista.jmiEliminarProducto.addActionListener(this);
         this.vista.jmiBuscarProducto.addActionListener(this);
         this.vista.jmiBuscarEntrada.addActionListener(this);
         this.vista.jmiBuscarSalida.addActionListener(this);
@@ -81,11 +86,20 @@ public class CtrlMenu implements ActionListener{
               CtrlNuevaSalida ctrlnSalida = new CtrlNuevaSalida(this,vistaNuevaSalida, salidas);
               ctrlnSalida.iniciar();
               
-          }else if(e.getSource() == vista.jmiEliminarUsuario){
+          }else if(e.getSource() == vista.jmiEliminarProducto){
+              jifEliminarProducto vistaEliminarProducto = new jifEliminarProducto();
+              CtrlEliminarProducto ctrlEliminarProducto = new CtrlEliminarProducto(listaProductos, vistaEliminarProducto);
+              ctrlEliminarProducto.iniciar();
               
           }else if(e.getSource() == vista.jmiEliminarEntrada){
+              jifEliminarEntrada vistaEliminarEntrada = new jifEliminarEntrada();
+              CtrlEliminarEntrada ctrlEliminarEntrada = new CtrlEliminarEntrada(entradas, vistaEliminarEntrada );
+              ctrlEliminarEntrada.iniciar();
               
           }else if(e.getSource() == vista.jmiEliminarSalida){
+              jifEliminarSalida vistaEliminarSalida = new jifEliminarSalida();
+              CtrlEliminarSalida ctrlEliminarSalida = new CtrlEliminarSalida(salidas, vistaEliminarSalida );
+              ctrlEliminarSalida.iniciar();
               
           }else if(e.getSource() == vista.jmiBuscarProducto){
               jifBuscarProducto vistaBuscarProducto = new jifBuscarProducto();
@@ -93,8 +107,14 @@ public class CtrlMenu implements ActionListener{
               ctrlnBuscarProducto.iniciar();
               
           }else if(e.getSource() == vista.jmiBuscarEntrada){
+              jifBuscarEntrada vistaBuscarEntrada = new jifBuscarEntrada();
+              CtrlBuscarEntrada ctrlBuscarEntrada = new CtrlBuscarEntrada(entradas, vistaBuscarEntrada );
+              ctrlBuscarEntrada.iniciar();
               
           }else if(e.getSource() == vista.jmiBuscarSalida){
+              jifBuscarSalida vistaBuscarSalida = new jifBuscarSalida();
+              CtrlBuscarSalida ctrlBuscarSalida = new CtrlBuscarSalida(salidas, vistaBuscarSalida );
+              ctrlBuscarSalida.iniciar();
               
           }else if(e.getSource() == vista.jmiMostrarProductos){
               

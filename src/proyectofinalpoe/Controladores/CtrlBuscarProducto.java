@@ -58,7 +58,7 @@ public class CtrlBuscarProducto implements ActionListener{
                                                        "Ajustable: " + anillo.isAjustable() + "\n" + 
                                                        "Estilo: " + anillo.getEstilo() + "n");
                }
-               if(aux instanceof Collar) {
+                else if(aux instanceof Collar) {
                    Collar collar = (Collar) aux;
                    JOptionPane.showMessageDialog(menu, "ID: " + collar.getId()+ "\n" +
                                                        "Nombre: " + collar.getNombre() + "\n" +
@@ -70,7 +70,7 @@ public class CtrlBuscarProducto implements ActionListener{
                                                        "Cadena: " + collar.getCadena()+ "\n" + 
                                                        "Estilo: " + collar.isEstilo()+ "n");
                }
-               if(aux instanceof Aretes) {
+                else if(aux instanceof Aretes) {
                    Aretes aretes = (Aretes) aux;
                    JOptionPane.showMessageDialog(menu, "ID: " + aretes.getId()+ "\n" +
                                                        "Nombre: " + aretes.getNombre() + "\n" +
