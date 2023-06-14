@@ -16,14 +16,13 @@ public class Aretes extends Producto{
     private boolean piedras;
    
 
-    public Aretes(String material, String forma, String cierre, String color, boolean piedras, int id, String nombre, double precio, int stock, String descripcion) {
+    public Aretes(String material, String forma, String cierre, String color, boolean piedras, int id, String nombre, double precio, String descripcion) {
         super(id, nombre, precio, descripcion);
         this.material = material;
         this.forma = forma;
         this.cierre = cierre;
         this.color = color;
         this.piedras = piedras;
-        this.siguiente = null;
     }
 
     public Aretes() {
@@ -33,7 +32,7 @@ public class Aretes extends Producto{
         this.cierre = "cier";
         this.color = "col";
         this.piedras = false;
-        this.siguiente = null;
+  
     }
 
     public String getMaterial() {

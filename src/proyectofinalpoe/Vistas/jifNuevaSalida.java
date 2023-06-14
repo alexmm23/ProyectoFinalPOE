@@ -27,18 +27,18 @@ public class jifNuevaSalida extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jtfCostoCompra = new javax.swing.JTextField();
+        jtfCostoVenta = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jbnRegresar = new javax.swing.JButton();
-        jbnSiguiente = new javax.swing.JButton();
+        jbnGuardar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jcbDias = new javax.swing.JComboBox<>();
         jcbMeses = new javax.swing.JComboBox<>();
         jcbAnio = new javax.swing.JComboBox<>();
-        jtfProveedor = new javax.swing.JTextField();
+        jtfCliente = new javax.swing.JTextField();
         jcbTipoProducto = new javax.swing.JComboBox<>();
         jtfCantProductos = new javax.swing.JTextField();
 
@@ -51,7 +51,7 @@ public class jifNuevaSalida extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Fecha");
 
-        jtfCostoCompra.setBackground(new java.awt.Color(243, 223, 193));
+        jtfCostoVenta.setBackground(new java.awt.Color(243, 223, 193));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Cliente");
@@ -64,11 +64,11 @@ public class jifNuevaSalida extends javax.swing.JInternalFrame {
         jbnRegresar.setBackground(new java.awt.Color(243, 223, 193));
         jbnRegresar.setText("Regresar");
 
-        jbnSiguiente.setBackground(new java.awt.Color(243, 223, 193));
-        jbnSiguiente.setText("Siguiente");
-        jbnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+        jbnGuardar.setBackground(new java.awt.Color(243, 223, 193));
+        jbnGuardar.setText("Guardar");
+        jbnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbnSiguienteActionPerformed(evt);
+                jbnGuardarActionPerformed(evt);
             }
         });
 
@@ -95,7 +95,7 @@ public class jifNuevaSalida extends javax.swing.JInternalFrame {
             }
         });
 
-        jtfProveedor.setBackground(new java.awt.Color(243, 223, 193));
+        jtfCliente.setBackground(new java.awt.Color(243, 223, 193));
 
         jcbTipoProducto.setBackground(new java.awt.Color(243, 223, 193));
         jcbTipoProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir", "Anillo", "Arete", "Collar" }));
@@ -114,7 +114,7 @@ public class jifNuevaSalida extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jbnRegresar)
                                 .addGap(79, 79, 79)
-                                .addComponent(jbnSiguiente))
+                                .addComponent(jbnGuardar))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -130,10 +130,10 @@ public class jifNuevaSalida extends javax.swing.JInternalFrame {
                                         .addComponent(jcbMeses, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(26, 26, 26)
                                         .addComponent(jcbAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jtfProveedor, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jtfCliente, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jcbTipoProducto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jtfCantProductos, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jtfCostoCompra))))
+                                    .addComponent(jtfCostoVenta))))
                         .addGap(163, 163, 163))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -154,7 +154,7 @@ public class jifNuevaSalida extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jtfProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -166,20 +166,20 @@ public class jifNuevaSalida extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jtfCostoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfCostoVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbnRegresar)
-                    .addComponent(jbnSiguiente))
+                    .addComponent(jbnGuardar))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnSiguienteActionPerformed
+    private void jbnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnGuardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbnSiguienteActionPerformed
+    }//GEN-LAST:event_jbnGuardarActionPerformed
 
     private void jcbAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbAnioActionPerformed
         // TODO add your handling code here:
@@ -193,14 +193,14 @@ public class jifNuevaSalida extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    public javax.swing.JButton jbnGuardar;
     public javax.swing.JButton jbnRegresar;
-    public javax.swing.JButton jbnSiguiente;
     public javax.swing.JComboBox<String> jcbAnio;
     public javax.swing.JComboBox<String> jcbDias;
     public javax.swing.JComboBox<String> jcbMeses;
     public javax.swing.JComboBox<String> jcbTipoProducto;
     public javax.swing.JTextField jtfCantProductos;
-    public javax.swing.JTextField jtfCostoCompra;
-    public javax.swing.JTextField jtfProveedor;
+    public javax.swing.JTextField jtfCliente;
+    public javax.swing.JTextField jtfCostoVenta;
     // End of variables declaration//GEN-END:variables
 }

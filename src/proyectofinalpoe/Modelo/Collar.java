@@ -22,7 +22,6 @@ public class Collar extends Producto{
         this.tipoGema = tipoGema;
         this.cadena = cadena;
         this.estilo = estilo;
-        this.siguiente = null;
     }
 
     public Collar() {
@@ -32,7 +31,6 @@ public class Collar extends Producto{
         this.tipoGema = "gem";
         this.cadena = "cad";
         this.estilo = false;
-        this.siguiente = null;
     }
 
     public double getLongitud() {

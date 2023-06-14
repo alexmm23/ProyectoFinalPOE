@@ -14,6 +14,7 @@ public class Salida {
     private int numProductos;
     private double costoVenta;
     private String tipoProducto;
+    private Salida siguiente;
 
     public Salida(String fecha, String cliente, int numProductos, double costoVenta, String tipoProducto) {
         this.fecha = fecha;
@@ -21,8 +22,17 @@ public class Salida {
         this.numProductos = numProductos;
         this.costoVenta = costoVenta;
         this.tipoProducto = tipoProducto;
+        this.siguiente = null;
     }
-
+    public Salida() {
+        this.fecha = "ddmmaa";
+        this.cliente = "a";
+        this.numProductos = 0;
+        this.costoVenta = 0.5;
+        this.tipoProducto = "def";
+        this.siguiente = null;
+    }
+    
     public String getFecha() {
         return fecha;
     }
@@ -61,6 +71,14 @@ public class Salida {
 
     public void setTipoProducto(String tipoProducto) {
         this.tipoProducto = tipoProducto;
+    }
+
+    public Salida getSiguiente() {
+        return siguiente;
+    }
+
+    public void setSiguiente(Salida siguiente) {
+        this.siguiente = siguiente;
     }
     
     

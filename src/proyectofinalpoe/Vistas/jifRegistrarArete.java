@@ -26,6 +26,7 @@ public class jifRegistrarArete extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -36,18 +37,20 @@ public class jifRegistrarArete extends javax.swing.JInternalFrame {
         jtfForma = new javax.swing.JTextField();
         jtfMaterial = new javax.swing.JTextField();
         jtfCierre = new javax.swing.JTextField();
-        jtfPiedra = new javax.swing.JTextField();
         jtfColor = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtfDescripcion = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jtaDescripcion = new javax.swing.JTextArea();
+        jbnRegresar = new javax.swing.JButton();
+        jbnGuardar = new javax.swing.JButton();
+        rbn1 = new javax.swing.JRadioButton();
+        rbn2 = new javax.swing.JRadioButton();
 
         setBackground(new java.awt.Color(22, 15, 41));
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setTitle("Registrar Arete");
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Forma");
@@ -78,20 +81,24 @@ public class jifRegistrarArete extends javax.swing.JInternalFrame {
 
         jtfCierre.setBackground(new java.awt.Color(243, 223, 193));
 
-        jtfPiedra.setBackground(new java.awt.Color(243, 223, 193));
-
         jtfColor.setBackground(new java.awt.Color(243, 223, 193));
 
-        jtfDescripcion.setBackground(new java.awt.Color(243, 223, 193));
-        jtfDescripcion.setColumns(20);
-        jtfDescripcion.setRows(5);
-        jScrollPane1.setViewportView(jtfDescripcion);
+        jtaDescripcion.setBackground(new java.awt.Color(243, 223, 193));
+        jtaDescripcion.setColumns(20);
+        jtaDescripcion.setRows(5);
+        jScrollPane1.setViewportView(jtaDescripcion);
 
-        jButton1.setBackground(new java.awt.Color(243, 223, 193));
-        jButton1.setText("Regresar");
+        jbnRegresar.setBackground(new java.awt.Color(243, 223, 193));
+        jbnRegresar.setText("Regresar");
 
-        jButton2.setBackground(new java.awt.Color(243, 223, 193));
-        jButton2.setText("Guardar");
+        jbnGuardar.setBackground(new java.awt.Color(243, 223, 193));
+        jbnGuardar.setText("Guardar");
+
+        buttonGroup1.add(rbn1);
+        rbn1.setText("Si");
+
+        buttonGroup1.add(rbn2);
+        rbn2.setText("No");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,31 +109,34 @@ public class jifRegistrarArete extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel2))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(jLabel5))
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(17, 17, 17)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(jbnRegresar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2))
+                                .addComponent(jbnGuardar))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
                             .addComponent(jtfColor)
-                            .addComponent(jtfPiedra)
                             .addComponent(jtfCierre)
                             .addComponent(jtfMaterial)
-                            .addComponent(jtfForma))))
+                            .addComponent(jtfForma)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rbn1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(rbn2)))))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -149,7 +159,8 @@ public class jifRegistrarArete extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jtfPiedra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rbn1)
+                    .addComponent(rbn2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -160,9 +171,9 @@ public class jifRegistrarArete extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(jbnRegresar)
+                    .addComponent(jbnGuardar))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
@@ -170,8 +181,7 @@ public class jifRegistrarArete extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -180,11 +190,14 @@ public class jifRegistrarArete extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jtfCierre;
-    private javax.swing.JTextField jtfColor;
-    private javax.swing.JTextArea jtfDescripcion;
-    private javax.swing.JTextField jtfForma;
-    private javax.swing.JTextField jtfMaterial;
-    private javax.swing.JTextField jtfPiedra;
+    public javax.swing.JButton jbnGuardar;
+    public javax.swing.JButton jbnRegresar;
+    public javax.swing.JTextArea jtaDescripcion;
+    public javax.swing.JTextField jtfCierre;
+    public javax.swing.JTextField jtfColor;
+    public javax.swing.JTextField jtfForma;
+    public javax.swing.JTextField jtfMaterial;
+    public javax.swing.JRadioButton rbn1;
+    public javax.swing.JRadioButton rbn2;
     // End of variables declaration//GEN-END:variables
 }
