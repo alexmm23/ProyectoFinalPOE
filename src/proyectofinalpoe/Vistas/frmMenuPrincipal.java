@@ -48,7 +48,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jmiNuevaEntrada = new javax.swing.JMenuItem();
         jmiNuevaSalida = new javax.swing.JMenuItem();
         jmnEliminar = new javax.swing.JMenu();
-        jmiEliminarUsuario = new javax.swing.JMenuItem();
+        jmiEliminarProducto = new javax.swing.JMenuItem();
         jmiEliminarEntrada = new javax.swing.JMenuItem();
         jmiEliminarSalida = new javax.swing.JMenuItem();
         jmnBuscar = new javax.swing.JMenu();
@@ -121,9 +121,9 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jmnEliminar.setBackground(new java.awt.Color(221, 190, 168));
         jmnEliminar.setText("Eliminar");
 
-        jmiEliminarUsuario.setBackground(new java.awt.Color(243, 223, 193));
-        jmiEliminarUsuario.setText("Usuario");
-        jmnEliminar.add(jmiEliminarUsuario);
+        jmiEliminarProducto.setBackground(new java.awt.Color(243, 223, 193));
+        jmiEliminarProducto.setText("Producto");
+        jmnEliminar.add(jmiEliminarProducto);
 
         jmiEliminarEntrada.setBackground(new java.awt.Color(243, 223, 193));
         jmiEliminarEntrada.setText("Entrada");
@@ -251,8 +251,8 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem jmiBuscarProducto;
     public javax.swing.JMenuItem jmiBuscarSalida;
     public javax.swing.JMenuItem jmiEliminarEntrada;
+    public javax.swing.JMenuItem jmiEliminarProducto;
     public javax.swing.JMenuItem jmiEliminarSalida;
-    public javax.swing.JMenuItem jmiEliminarUsuario;
     public javax.swing.JMenuItem jmiMostrarEntradas;
     public javax.swing.JMenuItem jmiMostrarProductos;
     public javax.swing.JMenuItem jmiMostrarSalidas;
