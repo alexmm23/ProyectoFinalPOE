@@ -2,11 +2,21 @@ package proyectofinalpoe.Modelo;
 
 public class ListaProducto {
     public Producto lista;
+    public Producto ultimo;
     
     public void ListaProducto(){
         lista = null;
     }
     public void agregar(Producto p){
+        /*
+        Producto nuevoNodo = p;
+        if (lista == null) {
+            lista = nuevoNodo;
+            ultimo = nuevoNodo;
+        } else {
+            ultimo.siguiente = nuevoNodo;
+            ultimo = nuevoNodo;
+        }*/
         Producto nuevo = p;
                
         if(lista == null){
@@ -16,7 +26,7 @@ public class ListaProducto {
             while(aux.getSiguiente() != null){
                 aux = aux.getSiguiente();
             }
-            aux.setSiguiente(p);
+            aux.setSiguiente(nuevo);
         }
     }
     

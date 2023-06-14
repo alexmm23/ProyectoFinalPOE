@@ -46,6 +46,10 @@ public class jifRegistrarAnillo extends javax.swing.JInternalFrame {
         rbnNo = new javax.swing.JRadioButton();
 
         setBackground(new java.awt.Color(22, 15, 41));
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jlbTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jlbTitulo.setForeground(new java.awt.Color(255, 255, 255));

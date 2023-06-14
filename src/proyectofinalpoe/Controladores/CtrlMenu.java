@@ -7,13 +7,10 @@ package proyectofinalpoe.Controladores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import proyectofinalpoe.Modelo.Anillo;
-import proyectofinalpoe.Modelo.ListaAnillos;
-import proyectofinalpoe.Modelo.ListaAretes;
-import proyectofinalpoe.Modelo.ListaCollares;
 import proyectofinalpoe.Modelo.ListaEntradas;
 import proyectofinalpoe.Modelo.ListaProducto;
+import proyectofinalpoe.Modelo.Producto;
 import proyectofinalpoe.Modelo.Usuario;
-import proyectofinalpoe.Vistas.frmIngresar;
 import proyectofinalpoe.Vistas.frmMenuPrincipal;
 import proyectofinalpoe.Vistas.jifBuscarProducto;
 import proyectofinalpoe.Vistas.jifNuevoUsuario;
@@ -24,16 +21,11 @@ import proyectofinalpoe.Vistas.jifNuevaEntrada;
  * @author aleja
  */
 public class CtrlMenu implements ActionListener{
-    //private frmIngreso vistaIngreso;
     private frmMenuPrincipal vista;
-    //private frmIngresar ingreso;
     private CtrlIngreso controlador;
     private Usuario usuario;
     private Usuario[] usuarios;
-    private ListaProducto listaproductos;
-    private ListaAnillos anillos;
-    private ListaCollares collares;
-    private ListaAretes aretes;
+    private ListaProducto listaProductos;
     private ListaEntradas entradas;
     
      public CtrlMenu(frmMenuPrincipal vista, Usuario usuario, Usuario[] usuarios,CtrlIngreso controlador){
@@ -41,7 +33,8 @@ public class CtrlMenu implements ActionListener{
         this.controlador = controlador;
         this.usuario = usuario;
         this.usuarios = usuarios;
-        this.listaproductos = new ListaProducto();
+        this.entradas = new ListaEntradas();
+        this.listaProductos = new ListaProducto();
         this.vista.jmiNuevoUsuario.addActionListener(this);
         this.vista.jmiNuevaEntrada.addActionListener(this);
         this.vista.jmiNuevaSalida.addActionListener(this);
@@ -55,12 +48,19 @@ public class CtrlMenu implements ActionListener{
         this.vista.jmiMostrarEntradas.addActionListener(this);
         this.vista.jmiMostrarSalidas.addActionListener(this);
         this.vista.jbnSalir.addActionListener(this);
-        
+        //PRUEBAS
         Anillo anillo = new Anillo();
+        Anillo anillo2 = new Anillo();
+        anillo2.setId(10);
         anillo.setId(123);
         anillo.setPiedra("Lapizlazuli");
-        listaproductos.agregar(anillo);
-        
+        listaProductos.agregar(anillo);
+        listaProductos.agregar(anillo2);
+        Producto p = listaProductos.lista;
+        while(p != null){
+            System.out.println(p.getId());
+            p = p.getSiguiente();
+        }
     }
     public void actualizarArreglo(Usuario[] usuarios){
         this.usuarios = usuarios;
@@ -81,7 +81,7 @@ public class CtrlMenu implements ActionListener{
               
           }else if(e.getSource() == vista.jmiNuevaEntrada){
               jifNuevaEntrada vistaNuevaEntrada = new jifNuevaEntrada();
-              CtrlNuevaEntrada ctrlnEntrada = new CtrlNuevaEntrada(this, vistaNuevaEntrada);
+              CtrlNuevaEntrada ctrlnEntrada = new CtrlNuevaEntrada(this, vistaNuevaEntrada, entradas, listaProductos);
               ctrlnEntrada.iniciar();
               
           }else if(e.getSource() == vista.jmiNuevaSalida){
@@ -94,7 +94,7 @@ public class CtrlMenu implements ActionListener{
               
           }else if(e.getSource() == vista.jmiBuscarProducto){
               jifBuscarProducto vistaBuscarProducto = new jifBuscarProducto();
-              CtrlBuscarProducto ctrlnBuscarProducto = new CtrlBuscarProducto(listaproductos, vistaBuscarProducto );
+              CtrlBuscarProducto ctrlnBuscarProducto = new CtrlBuscarProducto(listaProductos, vistaBuscarProducto );
               ctrlnBuscarProducto.iniciar();
               
           }else if(e.getSource() == vista.jmiBuscarEntrada){
@@ -113,29 +113,7 @@ public class CtrlMenu implements ActionListener{
           }
       }
 
-    public ListaAnillos getAnillos() {
-        return anillos;
-    }
-
-    public void setAnillos(ListaAnillos anillos) {
-        this.anillos = anillos;
-    }
-
-    public ListaCollares getCollares() {
-        return collares;
-    }
-
-    public void setCollares(ListaCollares collares) {
-        this.collares = collares;
-    }
-
-    public ListaAretes getAretes() {
-        return aretes;
-    }
-
-    public void setAretes(ListaAretes aretes) {
-        this.aretes = aretes;
-    }
+    
 
     public ListaEntradas getEntradas() {
         return entradas;
@@ -143,6 +121,14 @@ public class CtrlMenu implements ActionListener{
 
     public void setEntradas(ListaEntradas entradas) {
         this.entradas = entradas;
+    }
+
+    public ListaProducto getListaProductos() {
+        return listaProductos;
+    }
+
+    public void setListaProductos(ListaProducto listaProductos) {
+        this.listaProductos = listaProductos;
     }
     
       

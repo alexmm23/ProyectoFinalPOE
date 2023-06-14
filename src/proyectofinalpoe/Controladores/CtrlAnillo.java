@@ -9,7 +9,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import proyectofinalpoe.Modelo.Anillo;
 import proyectofinalpoe.Modelo.Entrada;
-import proyectofinalpoe.Modelo.ListaAnillos;
+import proyectofinalpoe.Modelo.ListaProducto;
+import proyectofinalpoe.Modelo.Producto;
+import proyectofinalpoe.Vistas.frmMenuPrincipal;
 import static proyectofinalpoe.Vistas.frmMenuPrincipal.jdpEscritorio;
 import proyectofinalpoe.Vistas.jifRegistrarAnillo;
 
@@ -19,14 +21,16 @@ import proyectofinalpoe.Vistas.jifRegistrarAnillo;
  */
 public class CtrlAnillo implements ActionListener {
 
+    private CtrlMenu menu;
     private jifRegistrarAnillo vista;
-    private ListaAnillos anillos;
+    private ListaProducto listaProductos;
     private Entrada entrada;
     private int id = 1;
     
-    public CtrlAnillo(jifRegistrarAnillo registrarAnillo, ListaAnillos anillos1, Entrada entradaAux) {
+    public CtrlAnillo(CtrlMenu menu,jifRegistrarAnillo registrarAnillo, ListaProducto listaProductos, Entrada entradaAux) {
+        this.menu = menu;
         this.vista = registrarAnillo;
-        this.anillos = anillos1;
+        this.listaProductos = listaProductos;
         this.entrada = entradaAux;
         this.vista.jbnGuardar.addActionListener(this);
         this.vista.jbnRegresar.addActionListener(this);
@@ -45,28 +49,36 @@ public class CtrlAnillo implements ActionListener {
             if(estanVacios){
                 JOptionPane.showMessageDialog(vista, "Debes completar todos los campos", "Advertencia",JOptionPane.WARNING_MESSAGE);
             }else{
+                System.out.println(entrada.getCostoCompra());
+                double calcularPrecio = (entrada.getCostoCompra()/entrada.getNumProductos())*1.3;
                 boolean esAjustable = false;
                 esAjustable = vista.rbnSi.isSelected();
-                
-                Anillo aux = new Anillo();
-                aux.setId(id);
-                aux.setNombre(entrada.getTipoProducto());
-                aux.setAjustable(esAjustable);
-                aux.setDescripcion(vista.jtaDescripcion.getText());
-                aux.setMaterial(vista.jtfMaterial.getText());
-                aux.setEstilo(vista.jtfEstilo.getText());
-                aux.setPiedra(vista.jtfPiedra.getText());
-                aux.setPrecio((entrada.getCostoCompra()/entrada.getNumProductos())*1.3);
-                aux.setTamano(Integer.parseInt(vista.jtfTamano.getText()));
-                id++;
-                anillos.agregar(aux);
-                JOptionPane.showMessageDialog(vista, "Guardado con exito " + aux.getMaterial(), "Completado",JOptionPane.INFORMATION_MESSAGE);
+                int i = 0;
+                while(i < entrada.getNumProductos()){
+                    Anillo aux = new Anillo();
+                    aux.setId(i);
+                    aux.setNombre(entrada.getTipoProducto());
+                    aux.setAjustable(esAjustable);
+                    aux.setDescripcion(vista.jtaDescripcion.getText());
+                    aux.setMaterial(vista.jtfMaterial.getText());
+                    aux.setEstilo(vista.jtfEstilo.getText());
+                    aux.setPiedra(vista.jtfPiedra.getText());
+                    aux.setPrecio(calcularPrecio);
+                    aux.setTamano(Integer.parseInt(vista.jtfTamano.getText()));
+                    id++;
+                    listaProductos.agregar(aux);
+                    i++;
+                    
+                }
 
+                menu.setListaProductos(listaProductos);
+                JOptionPane.showMessageDialog(vista, "Guardado con exito " , "Completado",JOptionPane.INFORMATION_MESSAGE);
+                //JOptionPane.showMessageDialog(vista, "Anillo " + listaProductos.lista.getId(), "Completado",JOptionPane.INFORMATION_MESSAGE);
             }
             
             
         }else if(e.getSource() == vista.jbnRegresar){
-            
+            menu.setListaProductos(listaProductos);
             vista.dispose();
         }
         

@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import proyectofinalpoe.Modelo.Entrada;
 import proyectofinalpoe.Modelo.ListaAretes;
+import proyectofinalpoe.Modelo.ListaProducto;
 import proyectofinalpoe.Vistas.jifRegistrarArete;
 
 /**
@@ -15,8 +16,14 @@ import proyectofinalpoe.Vistas.jifRegistrarArete;
  * @author aleja
  */
 public class CtrlArete implements ActionListener{
+    private ListaProducto listaProductos;
+    private Entrada entrada;
+    private jifRegistrarArete vista;
 
-    public CtrlArete(jifRegistrarArete registrarArete, ListaAretes aretes, Entrada entradaAux) {
+    public CtrlArete(jifRegistrarArete vistaRegistrarArete, ListaProducto listaProductos, Entrada entradaAux) {
+        this.vista = vistaRegistrarArete;
+        this.entrada = entradaAux;
+        this.listaProductos = listaProductos;
     }
     
     

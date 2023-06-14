@@ -33,6 +33,7 @@ public class jifBuscarProducto extends javax.swing.JInternalFrame {
         jbnBuscarProducto = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(22, 15, 41));
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
@@ -69,7 +70,7 @@ public class jifBuscarProducto extends javax.swing.JInternalFrame {
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jtfIdProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
+                    .addComponent(jtfIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 21, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbnCancelar)
