@@ -9,12 +9,12 @@ package proyectofinalpoe.Vistas;
  *
  * @author alex_
  */
-public class jifBuscarProducto extends javax.swing.JInternalFrame {
+public class jifBuscarSalida extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form jifBuscarProducto
+     * Creates new form jifBuscarSalida
      */
-    public jifBuscarProducto() {
+    public jifBuscarSalida() {
         initComponents();
     }
 
@@ -28,23 +28,25 @@ public class jifBuscarProducto extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jtfIdProducto = new javax.swing.JTextField();
+        jtfFechaSalida = new javax.swing.JTextField();
         jbnCancelar = new javax.swing.JButton();
-        jbnBuscarProducto = new javax.swing.JButton();
+        jbnBuscarSalida = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(22, 15, 41));
-        setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
 
         jLabel1.setBackground(new java.awt.Color(221, 190, 168));
-        jLabel1.setText("ID producto:");
+        jLabel1.setText("Fecha Salida:");
 
         jbnCancelar.setBackground(new java.awt.Color(36, 106, 115));
         jbnCancelar.setText("Cancelar");
 
-        jbnBuscarProducto.setBackground(new java.awt.Color(36, 106, 115));
-        jbnBuscarProducto.setText("Buscar");
+        jbnBuscarSalida.setBackground(new java.awt.Color(36, 106, 115));
+        jbnBuscarSalida.setText("Buscar");
+        jbnBuscarSalida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbnBuscarSalidaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,35 +58,39 @@ public class jifBuscarProducto extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jbnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbnBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jbnBuscarSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtfIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                        .addComponent(jtfFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jtfIdProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                    .addComponent(jtfFechaSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbnCancelar)
-                    .addComponent(jbnBuscarProducto))
-                .addGap(48, 48, 48))
+                    .addComponent(jbnBuscarSalida))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbnBuscarSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnBuscarSalidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbnBuscarSalidaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    public javax.swing.JButton jbnBuscarProducto;
+    public javax.swing.JButton jbnBuscarSalida;
     public javax.swing.JButton jbnCancelar;
-    public javax.swing.JTextField jtfIdProducto;
+    public javax.swing.JTextField jtfFechaSalida;
     // End of variables declaration//GEN-END:variables
 }

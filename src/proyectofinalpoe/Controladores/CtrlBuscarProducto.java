@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import proyectofinalpoe.Modelo.Anillo;
+import proyectofinalpoe.Modelo.Aretes;
+import proyectofinalpoe.Modelo.Collar;
 import proyectofinalpoe.Modelo.ListaProducto;
 import proyectofinalpoe.Modelo.Producto;
 import proyectofinalpoe.Vistas.frmMenuPrincipal;
@@ -49,13 +51,19 @@ public class CtrlBuscarProducto implements ActionListener{
                    Anillo anillo = (Anillo) aux;
                    JOptionPane.showMessageDialog(menu, "Anillo:" + anillo.getPiedra());
                }
-                   
-                   /*Anillo anillo = new Anillo();
-                   Collar collar = new Collar();
-                   
-                   lista.agregar(anillo);*/
-                     
+               if(aux instanceof Collar) {
+                   Collar collar = (Collar) aux;
+                   JOptionPane.showMessageDialog(menu, "Collar: " + collar.getMaterial());
+               }
+               if(aux instanceof Aretes) {
+                   Aretes aretes = (Aretes) aux;
+                   JOptionPane.showMessageDialog(menu, "Aretes: " + aretes.getCierre());
+               }
+       
             }
+        }
+        if(e.getSource() == vista.jbnCancelar) {
+            vista.dispose();
         }
     }
     
